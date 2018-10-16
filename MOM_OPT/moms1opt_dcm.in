@@ -1,0 +1,60 @@
+$rem
+threads 8
+jobtype	sp
+method PBEh-3c
+basis def2-mSVP
+mem_static	1024
+mem_total	8000
+sym_ignore	true
+unrestricted true
+scf_convergence	9
+solvent_method	pcm
+$end
+
+$molecule
+read incoords.mol
+$end
+
+$solvent
+dielectric	8.93
+$end
+
+$pcm
+theory iefpcm
+$end
+@@@
+
+$rem
+threads 8
+jobtype opt
+method PBEh-3c
+basis def2-mSVP
+scf_guess	read
+mem_static      1024
+mem_total       8000
+sym_ignore      true
+unrestricted true
+mom_start       1
+scf_algorithm	diis
+scf_max_cycles	250
+solvent_method	pcm
+geom_opt_tol_energy 25
+geom_opt_tol_gradient 75
+$end
+
+$solvent
+dielectric      8.93
+$end
+$pcm
+theory iefpcm
+$end
+
+$occupied
+OCCU
+VIRT
+$end
+
+$molecule
+read incoords.mol
+$end
+
