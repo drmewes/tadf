@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=dCALC.TADF.ANDBA-OMe.s1opt.in
+#SBATCH --job-name=dCALC.TADF.ANDBA-NPh3.s1opt_tda_soc_rlx.in
 #SBATCH -t 3-0:00
 #SBATCH -n 8
 #SBATCH -N 1
@@ -37,15 +37,15 @@ export OMP_NUM_THREADS=8
 
 # Go into Scratch
 cd $SCRATCH
-cp /data/mewes/CALC/TADF/ANDBA-OMe/s1opt.in /data/mewes/CALC/TADF/ANDBA-OMe/*.mol .
+cp /data/mewes/CALC/TADF/ANDBA-NPh3/s1opt_tda_soc_rlx.in /data/mewes/CALC/TADF/ANDBA-NPh3/*.mol .
 
 # Backup old out file is existing 
-[ -e /data/mewes/CALC/TADF/ANDBA-OMe/s1opt.out ] && cp /data/mewes/CALC/TADF/ANDBA-OMe/s1opt.out /data/mewes/CALC/TADF/ANDBA-OMe/s1opt.out_OLD
+[ -e /data/mewes/CALC/TADF/ANDBA-NPh3/s1opt_tda_soc_rlx.out ] && cp /data/mewes/CALC/TADF/ANDBA-NPh3/s1opt_tda_soc_rlx.out /data/mewes/CALC/TADF/ANDBA-NPh3/s1opt_tda_soc_rlx.out_OLD
 
 # Execute the program
 if [ "" = "yes" ] ; then
-$QC/bin/qchem -save -np 1 s1opt.in /data/mewes/CALC/TADF/ANDBA-OMe/s1opt.out s1opt.out.plots
+$QC/bin/qchem -save -np 1 s1opt_tda_soc_rlx.in /data/mewes/CALC/TADF/ANDBA-NPh3/s1opt_tda_soc_rlx.out s1opt_tda_soc_rlx.out.plots
 else
-$QC/bin/qchem -np 1 s1opt.in /data/mewes/CALC/TADF/ANDBA-OMe/s1opt.out
+$QC/bin/qchem -np 1 s1opt_tda_soc_rlx.in /data/mewes/CALC/TADF/ANDBA-NPh3/s1opt_tda_soc_rlx.out
 fi
 
