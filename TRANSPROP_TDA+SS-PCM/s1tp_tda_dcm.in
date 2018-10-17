@@ -1,0 +1,66 @@
+$solvent
+dielectric      8.93
+dielectric_infi 2.03
+$end
+
+$rem
+threads 8
+jobtype	sp
+method PBEh-3c
+basis def2-mSVP
+mem_static	1024
+mem_total	14000
+sym_ignore	true
+cis_n_roots             2
+cis_singlets            true 
+cis_triplets		false
+rpa                     false
+calc_soc 		true
+cis_moments             true
+cis_relaxed_density	true
+solvent_method		pcm
+$end
+
+$pcm
+StateSpecific   1
+ChargeSeparation Excited
+$end
+
+
+$molecule
+read moms1opt_dcm.mol
+$end
+
+
+@@@
+$rem
+threads 8
+jobtype sp
+method PBEh-3c
+basis def2-mSVP
+mem_static      1024
+mem_total       14000
+sym_ignore      true
+cis_n_roots             6
+cis_singlets            true
+cis_triplets            true
+rpa                     false
+calc_soc                true
+cis_moments             true
+cis_relaxed_density     true
+solvent_method          pcm
+$end
+
+$molecule
+read
+$end
+
+$pcm
+statespecific           Marcus 
+$end
+
+$solvent
+dielectric      8.93 
+dielectric_infi 2.03
+$end
+
