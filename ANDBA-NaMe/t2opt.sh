@@ -2,13 +2,13 @@
 
 #SBATCH --job-name=dCALC.TADF.ANDBA-NaMe.t2opt.in
 #SBATCH -t 3-0:00
-#SBATCH -n 8
+#SBATCH -n 4
 #SBATCH -N 1
 #SBATCH --mem-per-cpu=2G
 #SBATCH --mail-type=END
 #SBATCH --mail-type=FAIL
-#SBATCH -o /home/mewes1/err/qchem-%j
-#SBATCH --mail-user=stefaniemewes@janmewes.de
+#SBATCH -o /home/mewes/err/qchem-%j
+#SBATCH --mail-user=janmewes@janmewes.de
 #SBATCH -p short
 
 echo "This job was submitted from the computer:"
@@ -32,20 +32,20 @@ module add q-chem/intel/QCHEM_5.0.1_Trunk
 #export QCAUX=/home/mewes/SOFTWARE/QCHEM_AUX
 export QCSCRATCH=$SCRATCH
 export QCPLATFORM=LINUX_Ix86
-export QCTHREADS=8
-export OMP_NUM_THREADS=8
+export QCTHREADS=4
+export OMP_NUM_THREADS=4
 
 # Go into Scratch
 cd $SCRATCH
-cp /data/mewes1/CALC/TADF/ANDBA-NaMe/t2opt.in /data/mewes1/CALC/TADF/ANDBA-NaMe/*.mol .
+cp /data/mewes/CALC/TADF/ANDBA-NaMe/t2opt.in /data/mewes/CALC/TADF/ANDBA-NaMe/*.mol .
 
 # Backup old out file is existing 
-[ -e /data/mewes1/CALC/TADF/ANDBA-NaMe/t2opt.out ] && cp /data/mewes1/CALC/TADF/ANDBA-NaMe/t2opt.out /data/mewes1/CALC/TADF/ANDBA-NaMe/t2opt.out_OLD
+[ -e /data/mewes/CALC/TADF/ANDBA-NaMe/t2opt.out ] && cp /data/mewes/CALC/TADF/ANDBA-NaMe/t2opt.out /data/mewes/CALC/TADF/ANDBA-NaMe/t2opt.out_OLD
 
 # Execute the program
 if [ "" = "yes" ] ; then
-$QC/bin/qchem -save -np 1 t2opt.in /data/mewes1/CALC/TADF/ANDBA-NaMe/t2opt.out t2opt.out.plots
+$QC/bin/qchem -save -np 1 t2opt.in /data/mewes/CALC/TADF/ANDBA-NaMe/t2opt.out t2opt.out.plots
 else
-$QC/bin/qchem -np 1 t2opt.in /data/mewes1/CALC/TADF/ANDBA-NaMe/t2opt.out
+$QC/bin/qchem -np 1 t2opt.in /data/mewes/CALC/TADF/ANDBA-NaMe/t2opt.out
 fi
 

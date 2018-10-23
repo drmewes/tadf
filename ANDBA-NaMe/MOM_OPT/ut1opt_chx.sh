@@ -7,8 +7,8 @@
 #SBATCH --mem-per-cpu=2G
 #SBATCH --mail-type=END
 #SBATCH --mail-type=FAIL
-#SBATCH -o /home/mewes1/err/qchem-%j
-#SBATCH --mail-user=stefaniemewes@janmewes.de
+#SBATCH -o /home/mewes/err/qchem-%j
+#SBATCH --mail-user=janmewes@janmewes.de
 #SBATCH -p short
 
 echo "This job was submitted from the computer:"
@@ -37,15 +37,15 @@ export OMP_NUM_THREADS=8
 
 # Go into Scratch
 cd $SCRATCH
-cp /data/mewes1/CALC/TADF/ANDBA-NaMe/MOM_OPT/ut1opt_chx.in /data/mewes1/CALC/TADF/ANDBA-NaMe/MOM_OPT/*.mol .
+cp /data/mewes/CALC/TADF/ANDBA-NaMe/MOM_OPT/ut1opt_chx.in /data/mewes/CALC/TADF/ANDBA-NaMe/MOM_OPT/*.mol .
 
 # Backup old out file is existing 
-[ -e /data/mewes1/CALC/TADF/ANDBA-NaMe/MOM_OPT/ut1opt_chx.out ] && cp /data/mewes1/CALC/TADF/ANDBA-NaMe/MOM_OPT/ut1opt_chx.out /data/mewes1/CALC/TADF/ANDBA-NaMe/MOM_OPT/ut1opt_chx.out_OLD
+[ -e /data/mewes/CALC/TADF/ANDBA-NaMe/MOM_OPT/ut1opt_chx.out ] && cp /data/mewes/CALC/TADF/ANDBA-NaMe/MOM_OPT/ut1opt_chx.out /data/mewes/CALC/TADF/ANDBA-NaMe/MOM_OPT/ut1opt_chx.out_OLD
 
 # Execute the program
 if [ "" = "yes" ] ; then
-$QC/bin/qchem -save -np 1 ut1opt_chx.in /data/mewes1/CALC/TADF/ANDBA-NaMe/MOM_OPT/ut1opt_chx.out ut1opt_chx.out.plots
+$QC/bin/qchem -save -np 1 ut1opt_chx.in /data/mewes/CALC/TADF/ANDBA-NaMe/MOM_OPT/ut1opt_chx.out ut1opt_chx.out.plots
 else
-$QC/bin/qchem -np 1 ut1opt_chx.in /data/mewes1/CALC/TADF/ANDBA-NaMe/MOM_OPT/ut1opt_chx.out
+$QC/bin/qchem -np 1 ut1opt_chx.in /data/mewes/CALC/TADF/ANDBA-NaMe/MOM_OPT/ut1opt_chx.out
 fi
 
