@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --job-name=dCALC.TADF.ANDBA-Cz.MOM_OPT.moms1opt_eth.in
-#SBATCH -t 3-0:00
+#SBATCH -t 10-0:00
 #SBATCH -n 8
 #SBATCH -N 1
 #SBATCH --mem-per-cpu=2G
@@ -9,7 +9,7 @@
 #SBATCH --mail-type=FAIL
 #SBATCH -o /home/mewes1/err/qchem-%j
 #SBATCH --mail-user=stefaniemewes@janmewes.de
-#SBATCH -p short
+#SBATCH -p long
 
 echo "This job was submitted from the computer:"
 echo "$SLURM_SUBMIT_HOST"
