@@ -1,0 +1,23 @@
+$comment
+methyl peroxy radical
+TDDFT/TDA optimization with analytical gradient and 6-31+G*
+$end
+
+$molecule
+0 1
+H           0  0 -0.5
+H           0 0 0.5
+$end
+
+$rem
+jobtype             force
+METHOD              BLYP
+CIS_N_ROOTS         2
+RPA                 FALSE
+SCF_CONVERGENCE     7
+BASIS               6-31+G*         
+!XC_GRID             1
+cis_state_deriv     1   Lowest TDDFT state
+USE_NEW_TDDFT       TRUE
+NEW_DFT             TRUE
+$end
