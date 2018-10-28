@@ -1,0 +1,2313 @@
+mFile = /cm/shared/apps/q-chem/intel/QCHEM_5.1.0_Trunk/bin/mpi/machines
+Process 0 of 1 is on ctcp041 - thread support 0
+initial socket setup ...start
+initial socket setup ...done 
+now start server 0 ... 
+Q-Chem Developer Version!
+                  Welcome to Q-Chem
+     A Quantum Leap Into The Future Of Chemistry
+
+
+ Q-Chem 5.1, Q-Chem, Inc., Pleasanton, CA (2018)
+
+ Yihan Shao,  Zhengting Gan,  E. Epifanovsky,  A. T. B. Gilbert,  M. Wormit,  
+ J. Kussmann,  A. W. Lange,  A. Behn,  Jia Deng,  Xintian Feng,  D. Ghosh,  
+ M. Goldey,  P. R. Horn,  L. D. Jacobson,  I. Kaliman,  T. Kus,  A. Landau,  
+ Jie Liu,  E. I. Proynov,  R. M. Richard,  R. P. Steele,  E. J. Sundstrom,  
+ H. L. Woodcock III,  P. M. Zimmerman,  D. Zuev,  B. Albrecht,  E. Alguire,  
+ S. A. Baeppler,  D. Barton,  Z. Benda,  Y. A. Bernard,  E. J. Berquist,  
+ K. B. Bravaya,  H. Burton,  D. Casanova,  Chun-Min Chang,  Yunqing Chen,  
+ A. Chien,  K. D. Closser,  M. P. Coons,  S. Coriani,  S. Dasgupta,  
+ A. L. Dempwolff,  M. Diedenhofen,  Hainam Do,  R. G. Edgar,  Po-Tung Fang,  
+ S. Faraji,  S. Fatehi,  Qingguo Feng,  K. D. Fenk,  J. Fosso-Tande,  
+ Qinghui Ge,  A. Ghysels,  G. Gidofalvi,  J. Gomes,  J. Gonthier,  A. Gunina,  
+ D. Hait,  M. W. D. Hanson-Heine,  P. H. P. Harbach,  A. W. Hauser,  
+ J. E. Herr,  E. G. Hohenstein,  Z. C. Holden,  Kerwin Hui,  B. C. Huynh,  
+ T.-C. Jagau,  Hyunjun Ji,  B. Kaduk,  K. Khistyaev,  Jaehoon Kim,  
+ P. Klunzinger,  K. Koh,  D. Kosenkov,  L. Koulias,  T. Kowalczyk,  
+ C. M. Krauter,  A. Kunitsa,  Ka Un Lao,  A. Laurent,  K. V. Lawler,  
+ Joonho Lee,  D. Lefrancois,  S. Lehtola,  D. S. Levine,  Yi-Pei Li,  
+ You-Sheng Lin,  Fenglai Liu,  E. Livshits,  A. Luenser,  P. Manohar,  
+ E. Mansoor,  S. F. Manzer,  Shan-Ping Mao,  Yuezhi Mao,  N. Mardirossian,  
+ A. V. Marenich,  T. Markovich,  L. A. Martinez-Martinez,  S. A. Maurer,  
+ N. J. Mayhall,  S. C. McKenzie,  J.-M. Mewes,  A. F. Morrison,  
+ J. W. Mullinax,  K. Nanda,  T. S. Nguyen-Beck,  R. Olivares-Amaya,  
+ J. A. Parkhill,  T. M. Perrine,  F. Plasser,  P. Pokhilko,  S. Prager,  
+ A. Prociuk,  E. Ramos,  D. R. Rehn,  F. Rob,  M. Schneider,  N. Sergueev,  
+ S. M. Sharada,  S. Sharma,  D. W. Small,  T. Stauch,  T. Stein,  
+ Yu-Chuan Su,  A. J. W. Thom,  A. Tkatchenko,  T. Tsuchimochi,  N. M. Tubman,  
+ L. Vogt,  M. L. Vidal,  O. Vydrov,  M. A. Watson,  J. Wenzel,  
+ M. de Wergifosse,  T. A. Wesolowski,  A. White,  J. Witte,  A. Yamada,  
+ Jun Yang,  K. Yao,  S. Yeganeh,  S. R. Yost,  Zhi-Qiang You,  A. Zech,  
+ Igor Ying Zhang,  Xing Zhang,  Yan Zhao,  Ying Zhu,  B. R. Brooks,  
+ G. K. L. Chan,  C. J. Cramer,  M. S. Gordon,  W. J. Hehre,  A. Klamt,  
+ M. W. Schmidt,  C. D. Sherrill,  D. G. Truhlar,  A. Aspuru-Guzik,  R. Baer,  
+ A. T. Bell,  N. A. Besley,  Jeng-Da Chai,  A. E. DePrince, III,  
+ R. A. DiStasio Jr.,  A. Dreuw,  B. D. Dunietz,  T. R. Furlani,  
+ Chao-Ping Hsu,  Yousung Jung,  Jing Kong,  D. S. Lambrecht,  WanZhen Liang,  
+ C. Ochsenfeld,  V. A. Rassolov,  L. V. Slipchenko,  J. E. Subotnik,  
+ T. Van Voorhis,  J. M. Herbert,  A. I. Krylov,  P. M. W. Gill,  M. Head-Gordon
+
+ Contributors to earlier versions of Q-Chem not listed above: 
+ R. D. Adamson,  B. Austin,  J. Baker,  G. J. O. Beran,  K. Brandhorst,  
+ S. T. Brown,  E. F. C. Byrd,  A. K. Chakraborty,  C.-L. Cheng,  
+ Siu Hung Chien,  D. M. Chipman,  D. L. Crittenden,  H. Dachsel,  
+ R. J. Doerksen,  A. D. Dutoi,  L. Fusti-Molnar,  W. A. Goddard III,  
+ A. Golubeva-Zadorozhnaya,  S. R. Gwaltney,  G. Hawkins,  A. Heyden,  
+ S. Hirata,  G. Kedziora,  F. J. Keil,  C. Kelley,  Jihan Kim,  R. A. King,  
+ R. Z. Khaliullin,  P. P. Korambath,  W. Kurlancheek,  A. M. Lee,  M. S. Lee,  
+ S. V. Levchenko,  Ching Yeh Lin,  D. Liotard,  R. C. Lochan,  I. Lotan,  
+ P. E. Maslen,  N. Nair,  D. P. O'Neill,  D. Neuhauser,  E. Neuscamman,  
+ C. M. Oana,  R. Olson,  B. Peters,  R. Peverati,  P. A. Pieniazek,  
+ Y. M. Rhee,  J. Ritchie,  M. A. Rohrdanz,  E. Rosta,  N. J. Russ,  
+ H. F. Schaefer III,  N. E. Schultz,  N. Shenvi,  A. C. Simmonett,  A. Sodt,  
+ D. Stuck,  K. S. Thanthiriwatte,  V. Vanovschi,  Tao Wang,  A. Warshel,  
+ C. F. Williams,  Q. Wu,  X. Xu,  W. Zhang
+
+ Please cite Q-Chem as follows:
+ Y. Shao et al., Mol. Phys. 113, 184-215 (2015)
+ DOI: 10.1080/00268976.2014.952696
+
+ Q-Chem 5.1.1 for Intel X86 EM64T Linux
+
+ Parts of Q-Chem use Armadillo 8.300.2 (Tropical Shenanigans).
+ http://arma.sourceforge.net/
+
+ Q-Chem begins on Fri Oct 26 20:07:46 2018  
+
+Host: ctcp041
+0
+
+     Scratch files written to /scratch/mewes1/138460/qchem29773//
+ Parallel job on  1  processors
+The previous job contains 0 fragments, simply inherited here
+Symmetry turned off for PCM/SM12/SMD calculation
+Input Ideriv = 2
+Curr. Ideriv = -1
+Max.  Ideriv = 2
+Input Ideriv = 1
+Curr. Ideriv = 2
+Max.  Ideriv = 1
+
+Checking the input file for inconsistencies... 	...done.
+
+--------------------------------------------------------------
+User input:
+--------------------------------------------------------------
+$solvent
+dielectric      4.33
+dielectric_infi 1.83
+$end
+
+$rem
+threads 8
+jobtype	sp
+method PBEh-3c
+basis def2-mSVP
+mem_static	1024
+mem_total	14000
+sym_ignore	true
+cis_n_roots             2
+cis_singlets            true 
+cis_triplets		false
+rpa                     false
+calc_soc 		true
+cis_moments             true
+cis_relaxed_density	true
+solvent_method		pcm
+$end
+
+$pcm
+StateSpecific   1
+ChargeSeparation Excited
+$end
+
+
+$molecule
+read moms1opt_eth.mol
+$end
+
+
+--------------------------------------------------------------
+ Adding empirical dispersion correction 
+ ----------------------------------------------------------------
+ Doing -D3(BJ) with
+ s6 =   1.00000
+ s8 =   0.00000
+ a1 =   0.48600
+ a2 =   4.50000
+ -D3 energy including 3body term =     -0.0893999583 hartrees
+ ----------------------------------------------------------------
+ Adding gCP correction 
+ ----------------------------------------------------------------
+ gCP energy =      0.1417063672 hartrees
+ ----------------------------------------------------------------
+             Standard Nuclear Orientation (Angstroms)
+    I     Atom           X                Y                Z
+ ----------------------------------------------------------------
+    1      C       0.0000000000     0.0000000000     0.0000000000
+    2      C       0.0000000000     0.0000000000     1.3953990000
+    3      H       0.9404341240     0.0000000000     1.9359834144
+    4      C      -1.1971544522     0.0028666390     2.0856742759
+    5      C      -2.4294016943     0.0025142229     1.3951351118
+    6      C      -2.4386312669    -0.0114525248     0.0099102668
+    7      H      -3.3803169708    -0.0259900081    -0.5279539687
+    8      C      -1.2316209961    -0.0099277588    -0.7008062648
+    9      C      -1.4660358607     0.0117249686     3.5192150303
+   10      C      -0.6883586586     0.0154487457     4.6480407894
+   11      H       0.3937764497     0.0083760022     4.5986008466
+   12      C      -2.8651565262     0.0200068445     3.6536725814
+   13      C      -3.5244213529     0.0340876304     4.8774689374
+   14      C      -3.5005382797     0.0142637316     2.3964434388
+   15      C      -4.8698164833     0.0230693127     2.3655487448
+   16      H      -5.4215428871     0.0199648002     1.4338784555
+   17      C      -1.3322199334     0.0291737470     5.9075919399
+   18      H      -0.7216233354     0.0324696098     6.8012756622
+   19      C      -2.7029601871     0.0386541223     6.0323430813
+   20      H      -3.1533507982     0.0495535542     7.0173667279
+   21      C      -4.9384935497     0.0428685349     4.8162726393
+   22      H      -5.5217236493     0.0542777369     5.7288257096
+   23      C      -5.5733911488     0.0374996526     3.5952488930
+   24      H      -6.6550878384     0.0450682017     3.5676573296
+   25      B       1.3517881234     0.0186553942    -0.7699028986
+   26      C       1.3386297641     0.0402181841    -2.3249167383
+   27      C       2.5447117158     0.0781212172    -3.0239950921
+   28      H       3.4854870867     0.0851917128    -2.4847625875
+   29      C       2.5374752359     0.1099719992    -4.4042466808
+   30      C       1.3220455741     0.1049157135    -5.1241747987
+   31      C       0.1200045157     0.0588576861    -4.4371107715
+   32      H      -0.8197833753     0.0494032448    -4.9778495946
+   33      C       0.1143612194     0.0238324715    -3.0370281773
+   34      C       3.6440834882     0.1549202303    -5.3545103391
+   35      C       5.0111107392     0.1773229440    -5.2489867675
+   36      H       5.5120311620     0.1603578235    -4.2886868241
+   37      C       3.0591785152     0.1782746338    -6.6320511269
+   38      C       3.7893319861     0.2249475962    -7.8158214245
+   39      C       1.6529498010     0.1502253596    -6.5546233753
+   40      C       0.9444563166     0.1711655898    -7.7276082040
+   41      H      -0.1380085506     0.1532503631    -7.7430338527
+   42      C       3.0319439453     0.2447475974    -9.0108492932
+   43      H       3.5323284795     0.2813859732    -9.9708896632
+   44      C       1.6574930144     0.2182518860    -8.9512413095
+   45      H       1.0927868660     0.2345532620    -9.8742095511
+   46      C       5.7788595329     0.2239770920    -6.4368410974
+   47      H       6.8580909025     0.2413538518    -6.3556176410
+   48      C       5.2001259203     0.2479039130    -7.6850321863
+   49      H       5.8252303067     0.2836999542    -8.5690594518
+   50      B      -1.2328675672    -0.0322014166    -2.2589464189
+   51      C      -2.5870733773    -0.0917260214    -3.0452498115
+   52      C      -3.1022461993    -1.2965822526    -3.5211379102
+   53      C      -4.3180637044    -1.3276846257    -4.2063057443
+   54      H      -4.6885265166    -2.2820175945    -4.5600075974
+   55      C      -5.0226486436    -0.1528127536    -4.4286164729
+   56      O      -6.2028279447    -0.0802748232    -5.0789038648
+   57      C      -4.5020540174     1.0573732772    -3.9700623642
+   58      H      -5.0503646575     1.9729349827    -4.1612275836
+   59      C      -3.3005930834     1.0948944600    -3.2848077585
+   60      C      -6.7829235440    -1.2738069668    -5.5491903971
+   61      H      -7.7253570527    -0.9982952725    -6.0172755907
+   62      H      -6.9882604946    -1.9794882650    -4.7386569097
+   63      H      -6.1558513059    -1.7721696144    -6.2946445206
+   64      C      -2.7482793060     2.4092582106    -2.8044128578
+   65      H      -3.3632161485     3.2488731969    -3.1268508505
+   66      H      -2.6896147954     2.4443361518    -1.7144188801
+   67      H      -1.7368847864     2.5788733828    -3.1816173847
+   68      C      -2.3798755762    -2.5954342782    -3.2675827502
+   69      H      -2.5698408841    -3.2861868384    -4.0930000900
+   70      H      -1.2983723262    -2.4315958951    -3.2604742785
+   71      C      -2.7976990158    -3.2555041972    -1.9546749492
+   72      H      -2.5604678162    -2.6234854578    -1.0986357153
+   73      H      -3.8707481559    -3.4499155761    -1.9363672893
+   74      H      -2.2816401323    -4.2063808889    -1.8163395172
+   75      C       2.7221006842     0.0049755754     0.0029353075
+   76      C       3.4061384917     1.1854184119     0.2877299721
+   77      C       4.6347144442     1.1570847702     0.9511429047
+   78      H       5.1365379250     2.0963377151     1.1515846557
+   79      C       5.1938292901    -0.0519878563     1.3343297165
+   80      O       6.3738662247    -0.1800416469     1.9766628881
+   81      C       4.5182385810    -1.2386406338     1.0479561165
+   82      H       4.9637018223    -2.1822690771     1.3417595364
+   83      C       3.2997176361    -1.2167067386     0.3930957244
+   84      C       7.0902078475     0.9879732346     2.3031689392
+   85      H       7.9885934765     0.6660200009     2.8252400234
+   86      H       6.5212870902     1.6501164054     2.9625920262
+   87      H       7.3874342500     1.5525857192     1.4143626975
+   88      C       2.5953564336    -2.5072018277     0.0823209374
+   89      H       3.1598950027    -3.3709484946     0.4318144835
+   90      H       1.6094234126    -2.5461383285     0.5503533990
+   91      H       2.4435457929    -2.6272107483    -0.9930762530
+   92      C       2.8259513810     2.5306981941    -0.0690968953
+   93      H       3.6135841424     3.1746492504    -0.4697466419
+   94      H       2.0900248329     2.4285857032    -0.8715594271
+   95      C       2.1742619399     3.2174942008     1.1288277736
+   96      H       1.3551902502     2.6183506061     1.5276341603
+   97      H       1.7707163947     4.1911291850     0.8490885599
+   98      H       2.8941472561     3.3727097154     1.9335059748
+ ----------------------------------------------------------------
+ Nuclear Repulsion Energy =  7039.6731862792 hartrees
+ There are      190 alpha and      190 beta electrons
+ Requested basis set is def2-mSVP
+ There are 476 shells and 924 basis functions
+
+ Total QAlloc Memory Limit  14000 MB
+ Mega-Array Size      1001 MB
+ MEM_STATIC part      1024 MB
+ Discretize the solute cavity surface with Lebedev spheres
+	Using 302 Lebedev grid points for each H atom
+	Using 302 Lebedev grid points for other atoms
+	Atomic van der Waals radii will be scaled by 1.20
+ Remove points where switching function is < 1.0e-08
+ Keep 10471 surface tesserae and discard 19125 interior tesserae
+ Molecular Surface Area = 767.062 Angst**2
+ A cutoff of  1.0D-11 yielded  40883 shell pairs
+ There are    160715 function pairs (    177122 Cartesian)
+ 
+ -------------------------------------------------------
+ OpenMP Integral Computing Module                       
+ Release: version 1.0, May 2013, Q-Chem Inc. Pittsburgh 
+ -------------------------------------------------------
+ Integral Job Info:
+ Integral job number is                      11
+ Integral operator is                         1
+ short-range coefficients                     0
+ long-range coefficients              100000000
+ Omega coefficients                           0
+ if combine SR and LR in K                    0
+ Integral screening is                        0
+ Integral computing path is                   2
+ max size of driver memory is            800000
+ size of driver memory is                593474
+ size of scratch memory is              1809772
+ max col of scratch BK array               1296
+ max len of scratch array in speh3          155
+ max len of scratch index in speh4           18
+ max int batch size is                      520
+ min int batch size is                       52
+ fixed nKL is                                52
+ max L of basis functions is                  2
+ order of int derivative is                   0
+ number of shells is                        476
+ number of basis is                         980
+ number of cartesian basis is               980
+ number of contracted shell pairs         40883
+ number of primitive shell pairs          85450
+ maxK2 (contraction) of shell pair           25
+ max number of K2 of shell pair               1
+ max number of CS2 of shell pair           9949
+ max number of PS2 of shell pair          15240
+ mem total for path MDJ                  919692
+ -------------------------------------------------------
+ Smallest overlap matrix eigenvalue = 1.95E-04
+
+ Scale SEOQF with 1.000000e-02/1.000000e-01/1.000000e-02
+
+ Standard Electronic Orientation quadrupole field applied
+ Nucleus-field energy     =    -0.0000000158 hartrees
+ Guess from superposition of atomic densities
+ Warning:  Energy on first SCF cycle will be non-variational
+ SAD guess density has 380.000000 electrons
+
+ -----------------------------------------------------------------------
+  General SCF calculation program by
+  Eric Jon Sundstrom, Paul Horn, Yuezhi Mao, Dmitri Zuev, Alec White,
+  David Stuck, Shaama M.S., Shane Yost, Joonho Lee, David Small,
+  Daniel Levine, Susi Lehtola, Hugh Burton, Evgeny Epifanovsky
+ -----------------------------------------------------------------------
+ Exchange:     0.4200 Hartree-Fock + 0.5800 PBEh-3c
+ Correlation:  1.0000 PBEh-3c
+ Using SG-1 standard quadrature grid
+ Dispersion:   Grimme D3
+ using 8 threads for integral computing
+ -------------------------------------------------------
+ OpenMP Integral computing Module                
+ Release: version 2.0, May 2017, Q-Chem Inc. Pleasanton 
+ -------------------------------------------------------
+ -------------------------------------------------------
+ OpenMP BLAS3 based DFT computing Module                
+ Release: version 1.0, May 2013, Q-Chem Inc. Pittsburgh 
+ -------------------------------------------------------
+ A restricted SCF calculation will be
+ performed using DIIS
+ SCF converges when DIIS error is below 1.0e-08
+ ---------------------------------------
+  Cycle       Energy         DIIS error
+ ---------------------------------------
+    1   -2220.4848377191      2.80e-02  
+    2   -2201.8647363261      1.83e-03  
+    3   -2202.0735516369      1.35e-03  
+    4   -2202.2630419534      3.91e-04  
+    5   -2202.2777884084      1.79e-04  
+    6   -2202.2814330212      4.36e-05  
+    7   -2202.2816334284      1.22e-05  
+    8   -2202.2816500547      3.57e-06  
+    9   -2202.2816516886      8.64e-07  
+   10   -2202.2816517613      3.30e-07  
+   11   -2202.2816517018      1.05e-07  
+   12   -2202.2816515648      5.28e-08  
+   13   -2202.2816518102      1.54e-08  
+   14   -2202.2816517674      8.03e-09  Convergence criterion met
+ ---------------------------------------
+ SCF time:   CPU 8520.41s  wall 1113.00s 
+
+************** Final PCM Free Energy Summary **************
+ G_electrostatic  =      -0.02678084 hartree =     -16.80522995 kcal/mol
+ G_cavitation     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_dispersion     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_repulsion      =       0.00000000 hartree =       0.00000000 kcal/mol
+ --------------------------------------------------
+ Non-electrostatic Free Energy =       0.00000000 hartree =       0.00000000 kcal/mol
+ Total                         =      -0.02678084 hartree =     -16.80522995 kcal/mol
+ --------------------------------------------------
+ SCF Energy (H0 + V/2)                       =   -2202.28165177 
+ Solute Internal Energy (H0)                 =   -2202.25487093 
+ Total Free Energy (H0 + V/2 + non-elec)     =   -2202.28165177 hartree
+                                             = -1381952.59429356 kcal/mol
+***********************************************************
+
+ SCF   energy in the final basis set =    -2202.2816517674
+ Total energy in the final basis set =    -2202.2816517674
+ 
+ Direct TDDFT/TDA calculation will be performed
+ Exchange:     0.4200 Hartree-Fock + 0.5800 PBEh-3c
+ Correlation:  1.0000 PBEh-3c
+ Using SG-1 standard quadrature grid
+ Dispersion:   Grimme D3
+ Singlet excitation energies requested
+ Adding PCM contribution to the XC response
+ CIS energy converged when residual is below 10e- 6
+ ---------------------------------------------------
+ Iter    Rts Conv    Rts Left    Ttl Dev     Max Dev
+ ---------------------------------------------------
+   1         0           2      0.000092    0.000046
+   2         0           2      0.000062    0.000035
+   3         0           2      0.000018    0.000010
+   4         0           2      0.000010    0.000005
+   5         0           2      0.000003    0.000002
+   6         2           0      0.000001    0.000001    Roots Converged
+ ---------------------------------------------------
+ 
+ ---------------------------------------------------
+         TDDFT/TDA Excitation Energies              
+ ---------------------------------------------------
+
+ Excited state   1: excitation energy (eV) =    2.9435
+ Total energy for state  1:                 -2202.17347865 au
+    Multiplicity: Singlet
+    Trans. Mom.: -0.3521 X   0.0010 Y  -0.3060 Z
+    Strength   :     0.0156911746
+    D(190) --> V(  1) amplitude =  0.9589
+
+ Excited state   2: excitation energy (eV) =    3.0530
+ Total energy for state  2:                 -2202.16945556 au
+    Multiplicity: Singlet
+    Trans. Mom.:  0.2291 X  -0.0083 Y  -0.4789 Z
+    Strength   :     0.0210836496
+    D(189) --> V(  1) amplitude =  0.9633
+ 
+ ---------------------------------------------------
+ Calculating Relaxed Density
+ ---------------------------------------------------
+ Iter    Rts Conv    Rts Left    Ttl Dev     Max Dev
+ ---------------------------------------------------
+   1         0           2      0.000160    0.000086
+   2         0           2      0.000067    0.000035
+   3         0           2      0.000025    0.000013
+   4         0           2      0.000007    0.000004
+   5         0           2      0.000003    0.000002
+   6         2           0      0.000000    0.000000    Roots Converged
+ ---------------------------------------------------
+  SETman timing summary (seconds)
+  CPU time              7106.36s
+  System time              0.00s
+  Wall time             1776.56s
+
+
+
+*********SPIN-ORBIT COUPLING JOB BEGINS HERE*********
+There is no spin-orbit coupling effect between singlet states.
+
+=======================================================================================
+    SPIN-ORBIT COUPLING BETWEEN THE SINGLET GROUND STATE AND EXCITED TRIPLET STATE
+=======================================================================================
+
+SOC between the singlet ground state and excited triplet states (ms=0):
+T1(ms=0)      0.000000  +  3.700291i    cm-1
+T2(ms=0)      0.000000  +  -0.416444i    cm-1
+SOC between the singlet ground state and excited triplet states (ms=1):
+T1(ms=1)      0.341441  + (4.741447i)    cm-1
+T2(ms=1)      -0.101420  + (-0.696380i)    cm-1
+SOC between the singlet ground state and excited triplet states (ms=-1):
+T1(ms=-1)     0.341441  - (4.741447i)    cm-1
+T2(ms=-1)     -0.101420  - (-0.696380i)    cm-1
+Total SOC between the singlet ground state and excited triplet states:
+T1      7.673849    cm-1
+T2      1.078837    cm-1
+
+
+
+
+=======================================================================================
+                     SPIN-ORBIT COUPLING BETWEEN EXCITED TRIPLET STATES
+=======================================================================================
+
+SOC between the T1 (ms=0) state and excited triplet states (ms=1):
+T2(ms=1)      0.017779  + (0.031673i)    cm-1
+SOC between the T1 (ms=0) state and excited triplet states (ms=-1):
+T2(ms=-1)     -0.017779  + (0.031673i)    cm-1
+SOC between the T1 (ms=1) state and excited triplet states (ms=0):
+T2(ms=0)      -0.017779  + (0.031673i)    cm-1
+SOC between the T1 (ms=1) state and excited triplet states (ms=1):
+T2(ms=1)      0.000000  + (0.060784i)    cm-1
+SOC between the T1 (ms=-1) state and excited triplet states (ms=0):
+T2(ms=0)      0.017779  + (0.031673i)    cm-1
+SOC between the T1 (ms=-1) state and excited triplet states (ms=-1):
+T2(ms=-1)     0.000000  + (-0.060784i)    cm-1
+Total SOC between the T1 state and excited triplet states:
+T2      0.112545    cm-1
+
+
+
+
+
+
+
+=======================================================================================
+         SPIN-ORBIT COUPLING BETWEEN EXCITED SINGLET STATES AND TRIPLET STATES
+=======================================================================================
+
+SOC between the S1 state and excited triplet states (ms=0):
+T1(ms=0)      0.000000  +  2.257368i    cm-1
+T2(ms=0)      0.000000  +  1.407627i    cm-1
+SOC between the S1 state and excited triplet states (ms=1):
+T1(ms=1)      (-6.995565)  + (3.573801i)    cm-1
+T2(ms=1)      (-26.820693)  + (-0.915058i)    cm-1
+SOC between the S1 state and excited triplet states (ms=-1):
+T1(ms=-1)    -(-6.995565)  + (3.573801i)    cm-1
+T2(ms=-1)    -(-26.820693)  + (-0.915058i)    cm-1
+Total SOC between the S1 state and excited triplet states:
+T1      11.336476    cm-1
+T2      37.978351    cm-1
+
+
+
+SOC between the S2 state and excited triplet states (ms=0):
+T1(ms=0)      0.000000  +  -1.288022i    cm-1
+T2(ms=0)      0.000000  +  2.658069i    cm-1
+SOC between the S2 state and excited triplet states (ms=1):
+T1(ms=1)      (-0.378142)  + (0.213006i)    cm-1
+T2(ms=1)      (-0.020840)  + (-1.709947i)    cm-1
+SOC between the S2 state and excited triplet states (ms=-1):
+T1(ms=-1)    -(-0.378142)  + (0.213006i)    cm-1
+T2(ms=-1)    -(-0.020840)  + (-1.709947i)    cm-1
+Total SOC between the S2 state and excited triplet states:
+T1      1.426789    cm-1
+T2      3.593610    cm-1
+
+
+
+
+
+
+            *********SOC CODE ENDS HERE*********
+
+
+
+ 
+ --------------------------------------------------------------
+ 
+                    Orbital Energies (a.u.)
+ --------------------------------------------------------------
+ 
+ Alpha MOs
+ -- Occupied --
+-19.527 -19.527 -10.504 -10.504 -10.483 -10.483 -10.467 -10.467
+-10.466 -10.466 -10.465 -10.465 -10.465 -10.464 -10.464 -10.464
+-10.464 -10.464 -10.462 -10.462 -10.461 -10.461 -10.461 -10.461
+-10.458 -10.458 -10.458 -10.458 -10.457 -10.456 -10.455 -10.455
+-10.455 -10.454 -10.453 -10.452 -10.449 -10.448 -10.437 -10.436
+-10.436 -10.436 -10.435 -10.435 -10.435 -10.434 -10.433 -10.432
+-10.427 -10.426 -10.422 -10.420 -10.419 -10.417  -6.951  -6.950
+ -1.183  -1.182  -1.018  -1.018  -0.965  -0.961  -0.957  -0.956
+ -0.934  -0.933  -0.911  -0.902  -0.885  -0.884  -0.862  -0.856
+ -0.856  -0.851  -0.847  -0.847  -0.824  -0.818  -0.817  -0.814
+ -0.813  -0.806  -0.775  -0.774  -0.764  -0.764  -0.736  -0.729
+ -0.727  -0.721  -0.710  -0.709  -0.689  -0.683  -0.680  -0.666
+ -0.660  -0.649  -0.648  -0.647  -0.638  -0.638  -0.595  -0.594
+ -0.591  -0.588  -0.585  -0.584  -0.583  -0.575  -0.574  -0.562
+ -0.562  -0.545  -0.543  -0.537  -0.533  -0.533  -0.528  -0.523
+ -0.514  -0.509  -0.503  -0.500  -0.498  -0.496  -0.495  -0.494
+ -0.493  -0.490  -0.487  -0.487  -0.485  -0.481  -0.478  -0.474
+ -0.474  -0.473  -0.469  -0.466  -0.465  -0.464  -0.462  -0.454
+ -0.449  -0.445  -0.441  -0.439  -0.437  -0.429  -0.428  -0.427
+ -0.425  -0.423  -0.420  -0.415  -0.414  -0.411  -0.406  -0.406
+ -0.398  -0.397  -0.396  -0.394  -0.392  -0.391  -0.386  -0.385
+ -0.381  -0.374  -0.369  -0.367  -0.364  -0.358  -0.356  -0.354
+ -0.342  -0.341  -0.321  -0.316  -0.297  -0.296  -0.283  -0.279
+ -0.278  -0.264  -0.260  -0.258  -0.253  -0.251
+ -- Virtual --
+ -0.094  -0.061  -0.039  -0.031  -0.006   0.004   0.013   0.024
+  0.026   0.034   0.034   0.043   0.068   0.080   0.084   0.090
+  0.121   0.122   0.143   0.151   0.151   0.152   0.158   0.161
+  0.163   0.165   0.166   0.166   0.170   0.170   0.179   0.182
+  0.185   0.187   0.188   0.192   0.193   0.196   0.199   0.202
+  0.203   0.203   0.204   0.205   0.211   0.213   0.215   0.216
+  0.219   0.220   0.222   0.223   0.224   0.226   0.227   0.231
+  0.232   0.233   0.235   0.235   0.238   0.239   0.247   0.250
+  0.251   0.252   0.252   0.253   0.258   0.267   0.268   0.269
+  0.271   0.272   0.283   0.285   0.286   0.287   0.291   0.297
+  0.298   0.299   0.307   0.311   0.311   0.315   0.318   0.321
+  0.324   0.325   0.333   0.335   0.335   0.336   0.347   0.348
+  0.350   0.360   0.363   0.378   0.382   0.387   0.395   0.402
+  0.404   0.410   0.412   0.417   0.421   0.428   0.435   0.438
+  0.448   0.451   0.457   0.458   0.461   0.466   0.479   0.481
+  0.485   0.489   0.490   0.494   0.499   0.499   0.501   0.502
+  0.505   0.512   0.522   0.523   0.524   0.525   0.527   0.529
+  0.530   0.532   0.534   0.535   0.537   0.540   0.546   0.548
+  0.551   0.552   0.554   0.557   0.558   0.560   0.562   0.563
+  0.565   0.566   0.570   0.571   0.574   0.578   0.580   0.585
+  0.586   0.586   0.588   0.589   0.593   0.594   0.596   0.598
+  0.600   0.601   0.602   0.608   0.612   0.613   0.616   0.618
+  0.619   0.620   0.621   0.622   0.627   0.630   0.632   0.633
+  0.635   0.638   0.646   0.650   0.653   0.655   0.655   0.656
+  0.661   0.662   0.671   0.673   0.675   0.677   0.680   0.688
+  0.695   0.697   0.700   0.702   0.707   0.709   0.711   0.713
+  0.716   0.719   0.724   0.725   0.728   0.731   0.733   0.739
+  0.743   0.749   0.753   0.755   0.759   0.762   0.765   0.770
+  0.771   0.774   0.777   0.777   0.784   0.787   0.791   0.797
+  0.799   0.806   0.815   0.821   0.823   0.829   0.834   0.838
+  0.839   0.840   0.845   0.850   0.860   0.866   0.873   0.887
+  0.892   0.897   0.900   0.906   0.912   0.916   0.919   0.923
+  0.933   0.941   0.946   0.949   0.950   0.954   0.959   0.963
+  0.964   0.974   0.978   0.983   0.985   0.986   0.990   0.991
+  0.992   0.994   1.000   1.001   1.002   1.005   1.006   1.006
+  1.009   1.011   1.020   1.023   1.029   1.031   1.034   1.036
+  1.036   1.038   1.039   1.041   1.043   1.050   1.053   1.056
+  1.057   1.061   1.063   1.069   1.071   1.073   1.078   1.080
+  1.084   1.086   1.087   1.091   1.094   1.096   1.102   1.107
+  1.114   1.119   1.122   1.126   1.131   1.135   1.138   1.144
+  1.145   1.152   1.155   1.156   1.162   1.165   1.166   1.175
+  1.177   1.180   1.185   1.185   1.191   1.204   1.207   1.211
+  1.217   1.227   1.235   1.244   1.248   1.256   1.257   1.263
+  1.265   1.270   1.275   1.279   1.280   1.291   1.292   1.297
+  1.298   1.299   1.300   1.302   1.304   1.309   1.316   1.321
+  1.326   1.338   1.344   1.348   1.352   1.358   1.363   1.370
+  1.371   1.374   1.375   1.377   1.386   1.390   1.403   1.407
+  1.408   1.413   1.417   1.424   1.432   1.433   1.436   1.440
+  1.440   1.443   1.446   1.451   1.461   1.468   1.477   1.483
+  1.494   1.511   1.511   1.514   1.516   1.516   1.518   1.518
+  1.519   1.524   1.525   1.531   1.531   1.531   1.534   1.540
+  1.541   1.547   1.554   1.556   1.560   1.564   1.568   1.575
+  1.576   1.585   1.586   1.591   1.593   1.600   1.612   1.615
+  1.620   1.622   1.637   1.640   1.652   1.657   1.661   1.676
+  1.681   1.690   1.704   1.706   1.740   1.747   1.754   1.756
+  1.757   1.770   1.777   1.780   1.789   1.797   1.803   1.806
+  1.807   1.808   1.810   1.813   1.814   1.817   1.832   1.845
+  1.853   1.855   1.879   1.881   1.897   1.903   1.905   1.915
+  1.917   1.918   1.924   1.926   1.936   1.938   1.944   1.949
+  1.952   1.966   1.968   1.974   1.981   1.983   1.985   1.988
+  1.995   1.995   1.997   2.001   2.020   2.021   2.024   2.032
+  2.036   2.045   2.046   2.048   2.051   2.052   2.072   2.074
+  2.078   2.085   2.088   2.091   2.094   2.100   2.110   2.111
+  2.112   2.124   2.127   2.133   2.144   2.148   2.148   2.154
+  2.157   2.158   2.162   2.163   2.165   2.181   2.187   2.191
+  2.197   2.202   2.202   2.218   2.226   2.230   2.232   2.240
+  2.241   2.250   2.252   2.259   2.261   2.266   2.268   2.275
+  2.277   2.281   2.283   2.290   2.295   2.301   2.307   2.313
+  2.316   2.319   2.320   2.321   2.329   2.332   2.337   2.343
+  2.348   2.350   2.352   2.356   2.358   2.358   2.360   2.362
+  2.367   2.372   2.386   2.388   2.394   2.405   2.408   2.413
+  2.415   2.419   2.420   2.424   2.429   2.432   2.434   2.437
+  2.446   2.450   2.457   2.466   2.473   2.474   2.489   2.490
+  2.491   2.495   2.504   2.505   2.513   2.521   2.531   2.535
+  2.548   2.562   2.568   2.580   2.612   2.627   2.631   2.635
+  2.642   2.643   2.644   2.646   2.657   2.668   2.682   2.686
+  2.703   2.707   2.710   2.725   2.728   2.730   2.731   2.747
+  2.749   2.752   2.771   2.771   2.775   2.780   2.782   2.786
+  2.789   2.790   2.790   2.792   2.801   2.807   2.813   2.813
+  2.814   2.821   2.842   2.851   2.852   2.857   2.872   2.874
+  2.897   2.898   2.900   2.902   2.919   2.925   2.939   2.941
+  2.955   2.979   2.995   3.006   3.009   3.026   3.046   3.060
+  3.079   3.081   3.082   3.085   3.096   3.104   3.115   3.235
+  3.253   3.255   3.314   3.315   3.402   3.441   3.448   3.489
+  3.492   3.495   3.545   3.554   3.665   3.679   9.581   9.728
+ 13.141  13.175  13.402  13.488  13.495  13.513  13.526  13.546
+ 13.685  13.690  13.730  13.771  13.772  13.788  13.794  13.802
+ 13.819  13.838  13.859  13.886  13.899  13.904  13.935  13.995
+ 13.998  14.011  14.034  14.036  14.045  14.050  14.134  14.159
+ 14.161  14.194  14.205  14.207  14.220  14.266  14.276  14.281
+ 14.306  14.311  14.338  14.340  14.511  14.515  14.562  14.568
+ 14.573  14.577  14.583  14.584  25.785  25.786
+ --------------------------------------------------------------
+ 
+          Ground-State Mulliken Net Atomic Charges
+
+     Atom                 Charge (a.u.)
+  ----------------------------------------
+      1 C                    -0.151912
+      2 C                    -0.394999
+      3 H                     0.248207
+      4 C                     0.072321
+      5 C                     0.095189
+      6 C                    -0.401511
+      7 H                     0.250684
+      8 C                    -0.153973
+      9 C                     0.178131
+     10 C                    -0.388441
+     11 H                     0.250035
+     12 C                    -0.066351
+     13 C                     0.225058
+     14 C                     0.180936
+     15 C                    -0.397741
+     16 H                     0.250198
+     17 C                    -0.231902
+     18 H                     0.255251
+     19 C                    -0.345796
+     20 H                     0.251622
+     21 C                    -0.350293
+     22 H                     0.252096
+     23 C                    -0.229354
+     24 H                     0.254598
+     25 B                     0.678623
+     26 C                    -0.158116
+     27 C                    -0.384612
+     28 H                     0.246342
+     29 C                     0.069695
+     30 C                     0.095276
+     31 C                    -0.393609
+     32 H                     0.246569
+     33 C                    -0.157027
+     34 C                     0.179402
+     35 C                    -0.388499
+     36 H                     0.249694
+     37 C                    -0.065839
+     38 C                     0.223225
+     39 C                     0.179422
+     40 C                    -0.397845
+     41 H                     0.249704
+     42 C                    -0.349499
+     43 H                     0.251978
+     44 C                    -0.229171
+     45 H                     0.254484
+     46 C                    -0.232063
+     47 H                     0.254890
+     48 C                    -0.345155
+     49 H                     0.251612
+     50 B                     0.678279
+     51 C                    -0.220558
+     52 C                     0.070302
+     53 C                    -0.448006
+     54 H                     0.252227
+     55 C                     0.390452
+     56 O                    -0.467926
+     57 C                    -0.406892
+     58 H                     0.239289
+     59 C                     0.052368
+     60 C                    -0.426392
+     61 H                     0.251729
+     62 H                     0.218378
+     63 H                     0.218264
+     64 C                    -0.773446
+     65 H                     0.252362
+     66 H                     0.248977
+     67 H                     0.248489
+     68 C                    -0.552382
+     69 H                     0.240456
+     70 H                     0.252308
+     71 C                    -0.657151
+     72 H                     0.238878
+     73 H                     0.221282
+     74 H                     0.226863
+     75 C                    -0.228753
+     76 C                     0.069181
+     77 C                    -0.441691
+     78 H                     0.252701
+     79 C                     0.390561
+     80 O                    -0.468090
+     81 C                    -0.406282
+     82 H                     0.239541
+     83 C                     0.052323
+     84 C                    -0.426380
+     85 H                     0.251886
+     86 H                     0.218395
+     87 H                     0.218417
+     88 C                    -0.772893
+     89 H                     0.252432
+     90 H                     0.248162
+     91 H                     0.247975
+     92 C                    -0.550606
+     93 H                     0.240721
+     94 H                     0.253509
+     95 C                    -0.652398
+     96 H                     0.233162
+     97 H                     0.227213
+     98 H                     0.221228
+  ----------------------------------------
+  Sum of atomic charges =    -0.000000
+
+ -----------------------------------------------------------------
+                    Cartesian Multipole Moments
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -0.0000
+    Dipole Moment (Debye)
+         X       0.2487      Y       0.1509      Z       0.0775
+       Tot       0.3010
+    Quadrupole Moments (Debye-Ang)
+        XX    -266.8979     XY      22.4727     YY    -320.3854
+        XZ      -3.8234     YZ      12.0509     ZZ    -262.9092
+    Octopole Moments (Debye-Ang^2)
+       XXX     -25.3535    XXY      14.1567    XYY     -27.3581
+       YYY     -24.0049    XXZ     389.3709    XYZ     -46.1212
+       YYZ     462.4036    XZZ     -15.1616    YZZ     -37.5091
+       ZZZ    1141.2046
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX  -21598.2883   XXXY     273.5155   XXYY   -4584.6158
+      XYYY    -816.7195   YYYY   -2914.6872   XXXZ    2075.7537
+      XXYZ     457.5438   XYYZ    1278.2271   YYYZ    -190.4262
+      XXZZ   -7931.9098   XYZZ     200.8150   YYZZ   -6657.1686
+      XZZZ    1081.9272   YZZZ     -50.2875   ZZZZ  -28220.6155
+ -----------------------------------------------------------------
+ -----------------------------------------------------------------
+               TDA Excited-State Multipoles, State  1
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -0.0000
+    Dipole Moment (Debye)
+         X      -2.8978      Y      -0.4454      Z      -1.8577
+       Tot       3.4708
+    Quadrupole Moments (Debye-Ang)
+        XX    -226.7006     XY      25.6118     YY    -316.4849
+        XZ      59.0333     YZ      15.8546     ZZ    -284.9151
+    Octopole Moments (Debye-Ang^2)
+       XXX    -102.9178    XXY       1.5685    XYY     -36.4029
+       YYY     -27.8244    XXZ     286.9245    XYZ     -54.6181
+       YYZ     452.3262    XZZ    -231.4948    YZZ     -58.3137
+       ZZZ    1226.0948
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX  -20028.7818   XXXY     413.9506   XXYY   -4483.6596
+      XYYY    -794.4913   YYYY   -2857.3265   XXXZ    3852.3482
+      XXYZ     569.9111   XYYZ    1378.7070   YYYZ    -168.5343
+      XXZZ   -7649.1449   XYZZ     259.5251   YYZZ   -6636.3232
+      XZZZ    2951.9133   YZZZ      87.4648   ZZZZ  -30312.7232
+ -----------------------------------------------------------------
+ -----------------------------------------------------------------
+               TDA Excited-State Multipoles, State  2
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -0.0000
+    Dipole Moment (Debye)
+         X       3.4142      Y      -0.0946      Z       2.0819
+       Tot       4.0000
+    Quadrupole Moments (Debye-Ang)
+        XX    -222.6562     XY      25.1619     YY    -316.2488
+        XZ      52.5675     YZ      15.1195     ZZ    -297.4798
+    Octopole Moments (Debye-Ang^2)
+       XXX      80.1966    XXY      11.8764    XYY     -19.6010
+       YYY     -23.5608    XXZ     385.1227    XYZ     -47.9153
+       YYZ     461.9459    XZZ    -171.5705    YZZ     -52.7720
+       ZZZ    1304.1410
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX  -19834.0031   XXXY     409.2261   XXYY   -4477.5474
+      XYYY    -797.4862   YYYY   -2855.3789   XXXZ    3688.3835
+      XXYZ     549.3838   XYYZ    1358.4152   YYYZ    -174.2086
+      XXZZ   -7932.0060   XYZZ     233.5591   YYZZ   -6663.9854
+      XZZZ    2749.0119   YZZZ      64.2142   ZZZZ  -30721.0162
+ -----------------------------------------------------------------
+Archival summary:
+1\1\ctcp041\SP\ProcedureUnspecified\BasisUnspecified\252242\mewes1\FriOct2621:31:082018FriOct2621:31:082018\0\\#,ProcedureUnspecified,BasisUnspecified,\\0,1\C\C,1,1.3954\H,2,1.08473,1,119.891\C,2,1.38191,1,119.968,3,179.863,0\C,4,1.41254,2,120.766,1,0.155925,0\C,5,1.38533,4,119.646,2,0.509703,0\H,6,1.08457,5,120.12,4,179.135,0\C,6,1.40071,5,120.106,4,-0.719396,0\C,4,1.45857,2,130.591,1,-179.575,0\C,9,1.37078,4,134.813,2,-0.267951,0\H,10,1.08329,9,121.946,4,-0.202032,0\C,9,1.40559,4,106.114,2,179.607,0\C,12,1.39015,9,123.802,4,-179.792,0\C,12,1.40868,9,111.32,4,0.117838,0\C,14,1.36966,12,118.101,9,-179.911,0\H,15,1.08278,14,121.924,12,179.962,0\C,10,1.41464,9,118.361,4,179.788,0\H,17,1.08236,10,118.583,9,-179.981,0\C,17,1.37644,10,122.277,9,0.007556,0\H,19,1.08316,17,119.774,10,-179.97,0\C,13,1.41542,12,115.836,9,179.904,0\H,21,1.08307,13,120.107,12,-179.981,0\C,21,1.37624,13,119.949,12,-0.009938,0\H,23,1.08207,21,118.932,13,-179.958,0\B,1,1.55577,2,119.661,3,-0.790662,0\C,25,1.55522,1,119.184,2,-179.082,0\C,26,1.39455,25,119.623,1,179.003,0\H,27,1.08438,26,120.081,25,0.442073,0\C,27,1.38064,26,119.818,25,-179.397,0\C,29,1.41265,27,120.925,26,0.006427,0\C,30,1.38531,29,119.599,27,-0.410872,0\H,31,1.08429,30,120.333,29,-179.689,0\C,31,1.40053,30,120.009,29,0.291947,0\C,29,1.45932,27,130.37,26,179.845,0\C,34,1.37128,29,134.939,27,0.204162,0\H,35,1.08323,34,121.935,29,0.081835,0\C,34,1.40527,29,106.074,27,-179.752,0\C,37,1.39162,34,123.745,29,179.887,0\C,37,1.40864,34,111.421,29,-0.036937,0\C,39,1.37051,37,117.951,34,179.874,0\H,40,1.08272,39,121.923,37,-179.906,0\C,38,1.41496,37,115.979,34,-179.906,0\H,42,1.08324,38,120.114,37,179.972,0\C,42,1.376,38,119.855,37,0.014646,0\H,44,1.08214,42,118.948,38,179.961,0\C,35,1.41514,34,118.476,29,-179.918,0\H,46,1.08242,35,118.585,34,-179.978,0\C,46,1.37604,35,122.263,34,0.026079,0\H,48,1.0833,46,119.875,35,179.994,0\B,33,1.55678,31,120.267,30,-179.821,0\C,50,1.56706,33,119.896,31,1.78158,0\C,51,1.39411,50,121.564,33,83.7348,0\C,52,1.39594,51,120.574,50,179.285,0\H,53,1.0831,52,118.544,51,-179.885,0\C,53,1.38787,52,120.128,51,0.454033,0\O,55,1.34943,53,124.52,52,179.989,0\C,55,1.39493,53,119.491,52,0.415007,0\H,57,1.08418,55,119.073,53,179.036,0\C,57,1.38365,55,120.69,53,-0.718108,0\C,56,1.40791,55,118.408,53,1.18473,0\H,60,1.08775,56,106.619,55,178.829,0\H,60,1.09413,56,112.126,55,60.056,0\H,60,1.09421,56,112.182,55,-62.4273,0\C,59,1.50445,57,120.04,55,179.611,0\H,64,1.08953,59,111.811,57,-3.98124,0\H,64,1.09214,59,111.498,57,116.416,0\H,64,1.09269,59,111.419,57,-124.301,0\C,52,1.50769,51,120.669,50,1.25656,0\H,68,1.09295,52,109.523,51,-149.399,0\H,68,1.09387,52,110.229,51,-33.451,0\C,68,1.52774,52,112.687,51,88.872,0\H,71,1.0902,68,111.396,52,-61.9602,0\H,71,1.09067,68,111.132,52,58.1561,0\H,71,1.0907,68,110.871,52,178.204,0\C,25,1.57328,1,120.903,2,1.38327,0\C,75,1.39372,25,121.365,1,-95.3381,0\C,76,1.39654,75,120.774,25,-178.72,0\H,77,1.0836,76,118.535,75,179.825,0\C,77,1.38611,76,120.257,75,0.138775,0\O,79,1.34962,77,124.543,76,179.922,0\C,79,1.3952,77,119.329,76,0.134511,0\H,81,1.08406,79,119.061,77,179.46,0\C,81,1.38352,79,120.674,77,-0.249874,0\C,80,1.40855,79,118.445,77,0.899301,0\H,84,1.0878,80,106.609,79,178.955,0\H,84,1.09405,80,112.156,79,60.188,0\H,84,1.09412,80,112.196,79,-62.3349,0\C,83,1.50269,81,119.809,79,179.396,0\H,88,1.08945,83,111.816,81,0.085358,0\H,88,1.09208,83,111.417,81,120.518,0\H,88,1.09267,83,111.284,81,-120.145,0\C,76,1.50789,75,121.227,25,3.25804,0\H,92,1.09342,76,109.571,75,-138.54,0\H,92,1.0936,76,110.442,75,-22.4806,0\C,92,1.5269,76,112.325,75,99.8172,0\H,95,1.09037,92,111.125,76,-60.5188,0\H,95,1.09044,92,110.996,76,179.469,0\H,95,1.0908,92,111.167,76,59.431,0\\\@
+
+ Total job time:  5001.68s(wall), 17750.22s(cpu) 
+ Fri Oct 26 21:31:08 2018
+
+        *************************************************************
+        *                                                           *
+        *  Thank you very much for using Q-Chem.  Have a nice day.  *
+        *                                                           *
+        *************************************************************
+
+
+0 sent ACK to 0 
+now end server 0 ... 
+ 
+*************************************************************
+Job 2 of 2 
+*************************************************************
+ 
+mFile = /cm/shared/apps/q-chem/intel/QCHEM_5.1.0_Trunk/bin/mpi/machines
+Process 0 of 1 is on ctcp041 - thread support 0
+initial socket setup ...start
+initial socket setup ...done 
+now start server 0 ... 
+Q-Chem Developer Version!
+                  Welcome to Q-Chem
+     A Quantum Leap Into The Future Of Chemistry
+
+
+ Q-Chem 5.1, Q-Chem, Inc., Pleasanton, CA (2018)
+
+ Yihan Shao,  Zhengting Gan,  E. Epifanovsky,  A. T. B. Gilbert,  M. Wormit,  
+ J. Kussmann,  A. W. Lange,  A. Behn,  Jia Deng,  Xintian Feng,  D. Ghosh,  
+ M. Goldey,  P. R. Horn,  L. D. Jacobson,  I. Kaliman,  T. Kus,  A. Landau,  
+ Jie Liu,  E. I. Proynov,  R. M. Richard,  R. P. Steele,  E. J. Sundstrom,  
+ H. L. Woodcock III,  P. M. Zimmerman,  D. Zuev,  B. Albrecht,  E. Alguire,  
+ S. A. Baeppler,  D. Barton,  Z. Benda,  Y. A. Bernard,  E. J. Berquist,  
+ K. B. Bravaya,  H. Burton,  D. Casanova,  Chun-Min Chang,  Yunqing Chen,  
+ A. Chien,  K. D. Closser,  M. P. Coons,  S. Coriani,  S. Dasgupta,  
+ A. L. Dempwolff,  M. Diedenhofen,  Hainam Do,  R. G. Edgar,  Po-Tung Fang,  
+ S. Faraji,  S. Fatehi,  Qingguo Feng,  K. D. Fenk,  J. Fosso-Tande,  
+ Qinghui Ge,  A. Ghysels,  G. Gidofalvi,  J. Gomes,  J. Gonthier,  A. Gunina,  
+ D. Hait,  M. W. D. Hanson-Heine,  P. H. P. Harbach,  A. W. Hauser,  
+ J. E. Herr,  E. G. Hohenstein,  Z. C. Holden,  Kerwin Hui,  B. C. Huynh,  
+ T.-C. Jagau,  Hyunjun Ji,  B. Kaduk,  K. Khistyaev,  Jaehoon Kim,  
+ P. Klunzinger,  K. Koh,  D. Kosenkov,  L. Koulias,  T. Kowalczyk,  
+ C. M. Krauter,  A. Kunitsa,  Ka Un Lao,  A. Laurent,  K. V. Lawler,  
+ Joonho Lee,  D. Lefrancois,  S. Lehtola,  D. S. Levine,  Yi-Pei Li,  
+ You-Sheng Lin,  Fenglai Liu,  E. Livshits,  A. Luenser,  P. Manohar,  
+ E. Mansoor,  S. F. Manzer,  Shan-Ping Mao,  Yuezhi Mao,  N. Mardirossian,  
+ A. V. Marenich,  T. Markovich,  L. A. Martinez-Martinez,  S. A. Maurer,  
+ N. J. Mayhall,  S. C. McKenzie,  J.-M. Mewes,  A. F. Morrison,  
+ J. W. Mullinax,  K. Nanda,  T. S. Nguyen-Beck,  R. Olivares-Amaya,  
+ J. A. Parkhill,  T. M. Perrine,  F. Plasser,  P. Pokhilko,  S. Prager,  
+ A. Prociuk,  E. Ramos,  D. R. Rehn,  F. Rob,  M. Schneider,  N. Sergueev,  
+ S. M. Sharada,  S. Sharma,  D. W. Small,  T. Stauch,  T. Stein,  
+ Yu-Chuan Su,  A. J. W. Thom,  A. Tkatchenko,  T. Tsuchimochi,  N. M. Tubman,  
+ L. Vogt,  M. L. Vidal,  O. Vydrov,  M. A. Watson,  J. Wenzel,  
+ M. de Wergifosse,  T. A. Wesolowski,  A. White,  J. Witte,  A. Yamada,  
+ Jun Yang,  K. Yao,  S. Yeganeh,  S. R. Yost,  Zhi-Qiang You,  A. Zech,  
+ Igor Ying Zhang,  Xing Zhang,  Yan Zhao,  Ying Zhu,  B. R. Brooks,  
+ G. K. L. Chan,  C. J. Cramer,  M. S. Gordon,  W. J. Hehre,  A. Klamt,  
+ M. W. Schmidt,  C. D. Sherrill,  D. G. Truhlar,  A. Aspuru-Guzik,  R. Baer,  
+ A. T. Bell,  N. A. Besley,  Jeng-Da Chai,  A. E. DePrince, III,  
+ R. A. DiStasio Jr.,  A. Dreuw,  B. D. Dunietz,  T. R. Furlani,  
+ Chao-Ping Hsu,  Yousung Jung,  Jing Kong,  D. S. Lambrecht,  WanZhen Liang,  
+ C. Ochsenfeld,  V. A. Rassolov,  L. V. Slipchenko,  J. E. Subotnik,  
+ T. Van Voorhis,  J. M. Herbert,  A. I. Krylov,  P. M. W. Gill,  M. Head-Gordon
+
+ Contributors to earlier versions of Q-Chem not listed above: 
+ R. D. Adamson,  B. Austin,  J. Baker,  G. J. O. Beran,  K. Brandhorst,  
+ S. T. Brown,  E. F. C. Byrd,  A. K. Chakraborty,  C.-L. Cheng,  
+ Siu Hung Chien,  D. M. Chipman,  D. L. Crittenden,  H. Dachsel,  
+ R. J. Doerksen,  A. D. Dutoi,  L. Fusti-Molnar,  W. A. Goddard III,  
+ A. Golubeva-Zadorozhnaya,  S. R. Gwaltney,  G. Hawkins,  A. Heyden,  
+ S. Hirata,  G. Kedziora,  F. J. Keil,  C. Kelley,  Jihan Kim,  R. A. King,  
+ R. Z. Khaliullin,  P. P. Korambath,  W. Kurlancheek,  A. M. Lee,  M. S. Lee,  
+ S. V. Levchenko,  Ching Yeh Lin,  D. Liotard,  R. C. Lochan,  I. Lotan,  
+ P. E. Maslen,  N. Nair,  D. P. O'Neill,  D. Neuhauser,  E. Neuscamman,  
+ C. M. Oana,  R. Olson,  B. Peters,  R. Peverati,  P. A. Pieniazek,  
+ Y. M. Rhee,  J. Ritchie,  M. A. Rohrdanz,  E. Rosta,  N. J. Russ,  
+ H. F. Schaefer III,  N. E. Schultz,  N. Shenvi,  A. C. Simmonett,  A. Sodt,  
+ D. Stuck,  K. S. Thanthiriwatte,  V. Vanovschi,  Tao Wang,  A. Warshel,  
+ C. F. Williams,  Q. Wu,  X. Xu,  W. Zhang
+
+ Please cite Q-Chem as follows:
+ Y. Shao et al., Mol. Phys. 113, 184-215 (2015)
+ DOI: 10.1080/00268976.2014.952696
+
+ Q-Chem 5.1.1 for Intel X86 EM64T Linux
+
+ Parts of Q-Chem use Armadillo 8.300.2 (Tropical Shenanigans).
+ http://arma.sourceforge.net/
+
+ Q-Chem begins on Fri Oct 26 21:31:11 2018  
+
+Host: ctcp041
+0
+
+     Scratch files written to /scratch/mewes1/138460/qchem29773//
+ Parallel job on  1  processors
+The previous job contains 0 fragments, simply inherited here
+Symmetry turned off for PCM/SM12/SMD calculation
+Input Ideriv = 2
+Curr. Ideriv = -1
+Max.  Ideriv = 2
+Input Ideriv = 1
+Curr. Ideriv = 2
+Max.  Ideriv = 1
+
+Checking the input file for inconsistencies... 	...done.
+
+--------------------------------------------------------------
+User input:
+--------------------------------------------------------------
+$rem
+threads 8
+jobtype sp
+method PBEh-3c
+basis def2-mSVP
+mem_static      1024
+mem_total       14000
+sym_ignore      true
+cis_n_roots             6
+cis_singlets            true
+cis_triplets            true
+rpa                     false
+calc_soc                true
+cis_moments             true
+cis_relaxed_density     true
+solvent_method          pcm
+$end
+
+$molecule
+read
+$end
+
+$pcm
+statespecific           Marcus 
+$end
+
+$solvent
+dielectric      4.33 
+dielectric_infi 1.83
+$end
+
+--------------------------------------------------------------
+ Adding empirical dispersion correction 
+ ----------------------------------------------------------------
+ Doing -D3(BJ) with
+ s6 =   1.00000
+ s8 =   0.00000
+ a1 =   0.48600
+ a2 =   4.50000
+ -D3 energy including 3body term =     -0.0893999583 hartrees
+ ----------------------------------------------------------------
+ Adding gCP correction 
+ ----------------------------------------------------------------
+ gCP energy =      0.1417063672 hartrees
+ ----------------------------------------------------------------
+             Standard Nuclear Orientation (Angstroms)
+    I     Atom           X                Y                Z
+ ----------------------------------------------------------------
+    1      C       0.0000000000     0.0000000000     0.0000000000
+    2      C       0.0000000000     0.0000000000     1.3953990000
+    3      H       0.9404341240     0.0000000000     1.9359834144
+    4      C      -1.1971544522     0.0028666390     2.0856742759
+    5      C      -2.4294016943     0.0025142229     1.3951351118
+    6      C      -2.4386312669    -0.0114525248     0.0099102668
+    7      H      -3.3803169708    -0.0259900081    -0.5279539687
+    8      C      -1.2316209961    -0.0099277588    -0.7008062648
+    9      C      -1.4660358607     0.0117249686     3.5192150303
+   10      C      -0.6883586586     0.0154487457     4.6480407894
+   11      H       0.3937764497     0.0083760022     4.5986008466
+   12      C      -2.8651565262     0.0200068445     3.6536725814
+   13      C      -3.5244213529     0.0340876304     4.8774689374
+   14      C      -3.5005382797     0.0142637316     2.3964434388
+   15      C      -4.8698164833     0.0230693127     2.3655487448
+   16      H      -5.4215428871     0.0199648002     1.4338784555
+   17      C      -1.3322199334     0.0291737470     5.9075919399
+   18      H      -0.7216233354     0.0324696098     6.8012756622
+   19      C      -2.7029601871     0.0386541223     6.0323430813
+   20      H      -3.1533507982     0.0495535542     7.0173667279
+   21      C      -4.9384935497     0.0428685349     4.8162726393
+   22      H      -5.5217236493     0.0542777369     5.7288257096
+   23      C      -5.5733911488     0.0374996526     3.5952488930
+   24      H      -6.6550878384     0.0450682017     3.5676573296
+   25      B       1.3517881234     0.0186553942    -0.7699028986
+   26      C       1.3386297641     0.0402181841    -2.3249167383
+   27      C       2.5447117158     0.0781212172    -3.0239950921
+   28      H       3.4854870867     0.0851917128    -2.4847625875
+   29      C       2.5374752359     0.1099719992    -4.4042466808
+   30      C       1.3220455741     0.1049157135    -5.1241747987
+   31      C       0.1200045157     0.0588576861    -4.4371107715
+   32      H      -0.8197833753     0.0494032448    -4.9778495946
+   33      C       0.1143612194     0.0238324715    -3.0370281773
+   34      C       3.6440834882     0.1549202303    -5.3545103391
+   35      C       5.0111107392     0.1773229440    -5.2489867675
+   36      H       5.5120311620     0.1603578235    -4.2886868241
+   37      C       3.0591785152     0.1782746338    -6.6320511269
+   38      C       3.7893319861     0.2249475962    -7.8158214245
+   39      C       1.6529498010     0.1502253596    -6.5546233753
+   40      C       0.9444563166     0.1711655898    -7.7276082040
+   41      H      -0.1380085506     0.1532503631    -7.7430338527
+   42      C       3.0319439453     0.2447475974    -9.0108492932
+   43      H       3.5323284795     0.2813859732    -9.9708896632
+   44      C       1.6574930144     0.2182518860    -8.9512413095
+   45      H       1.0927868660     0.2345532620    -9.8742095511
+   46      C       5.7788595329     0.2239770920    -6.4368410974
+   47      H       6.8580909025     0.2413538518    -6.3556176410
+   48      C       5.2001259203     0.2479039130    -7.6850321863
+   49      H       5.8252303067     0.2836999542    -8.5690594518
+   50      B      -1.2328675672    -0.0322014166    -2.2589464189
+   51      C      -2.5870733773    -0.0917260214    -3.0452498115
+   52      C      -3.1022461993    -1.2965822526    -3.5211379102
+   53      C      -4.3180637044    -1.3276846257    -4.2063057443
+   54      H      -4.6885265166    -2.2820175945    -4.5600075974
+   55      C      -5.0226486436    -0.1528127536    -4.4286164729
+   56      O      -6.2028279447    -0.0802748232    -5.0789038648
+   57      C      -4.5020540174     1.0573732772    -3.9700623642
+   58      H      -5.0503646575     1.9729349827    -4.1612275836
+   59      C      -3.3005930834     1.0948944600    -3.2848077585
+   60      C      -6.7829235440    -1.2738069668    -5.5491903971
+   61      H      -7.7253570527    -0.9982952725    -6.0172755907
+   62      H      -6.9882604946    -1.9794882650    -4.7386569097
+   63      H      -6.1558513059    -1.7721696144    -6.2946445206
+   64      C      -2.7482793060     2.4092582106    -2.8044128578
+   65      H      -3.3632161485     3.2488731969    -3.1268508505
+   66      H      -2.6896147954     2.4443361518    -1.7144188801
+   67      H      -1.7368847864     2.5788733828    -3.1816173847
+   68      C      -2.3798755762    -2.5954342782    -3.2675827502
+   69      H      -2.5698408841    -3.2861868384    -4.0930000900
+   70      H      -1.2983723262    -2.4315958951    -3.2604742785
+   71      C      -2.7976990158    -3.2555041972    -1.9546749492
+   72      H      -2.5604678162    -2.6234854578    -1.0986357153
+   73      H      -3.8707481559    -3.4499155761    -1.9363672893
+   74      H      -2.2816401323    -4.2063808889    -1.8163395172
+   75      C       2.7221006842     0.0049755754     0.0029353075
+   76      C       3.4061384917     1.1854184119     0.2877299721
+   77      C       4.6347144442     1.1570847702     0.9511429047
+   78      H       5.1365379250     2.0963377151     1.1515846557
+   79      C       5.1938292901    -0.0519878563     1.3343297165
+   80      O       6.3738662247    -0.1800416469     1.9766628881
+   81      C       4.5182385810    -1.2386406338     1.0479561165
+   82      H       4.9637018223    -2.1822690771     1.3417595364
+   83      C       3.2997176361    -1.2167067386     0.3930957244
+   84      C       7.0902078475     0.9879732346     2.3031689392
+   85      H       7.9885934765     0.6660200009     2.8252400234
+   86      H       6.5212870902     1.6501164054     2.9625920262
+   87      H       7.3874342500     1.5525857192     1.4143626975
+   88      C       2.5953564336    -2.5072018277     0.0823209374
+   89      H       3.1598950027    -3.3709484946     0.4318144835
+   90      H       1.6094234126    -2.5461383285     0.5503533990
+   91      H       2.4435457929    -2.6272107483    -0.9930762530
+   92      C       2.8259513810     2.5306981941    -0.0690968953
+   93      H       3.6135841424     3.1746492504    -0.4697466419
+   94      H       2.0900248329     2.4285857032    -0.8715594271
+   95      C       2.1742619399     3.2174942008     1.1288277736
+   96      H       1.3551902502     2.6183506061     1.5276341603
+   97      H       1.7707163947     4.1911291850     0.8490885599
+   98      H       2.8941472561     3.3727097154     1.9335059748
+ ----------------------------------------------------------------
+ Nuclear Repulsion Energy =  7039.6731862792 hartrees
+ There are      190 alpha and      190 beta electrons
+ Requested basis set is def2-mSVP
+ There are 476 shells and 924 basis functions
+
+ Total QAlloc Memory Limit  14000 MB
+ Mega-Array Size      1001 MB
+ MEM_STATIC part      1024 MB
+ Discretize the solute cavity surface with Lebedev spheres
+	Using 302 Lebedev grid points for each H atom
+	Using 302 Lebedev grid points for other atoms
+	Atomic van der Waals radii will be scaled by 1.20
+ Remove points where switching function is < 1.0e-08
+ Keep 10471 surface tesserae and discard 19125 interior tesserae
+ Molecular Surface Area = 767.062 Angst**2
+ A cutoff of  1.0D-11 yielded  40883 shell pairs
+ There are    160715 function pairs (    177122 Cartesian)
+ 
+ -------------------------------------------------------
+ OpenMP Integral Computing Module                       
+ Release: version 1.0, May 2013, Q-Chem Inc. Pittsburgh 
+ -------------------------------------------------------
+ Integral Job Info:
+ Integral job number is                      11
+ Integral operator is                         1
+ short-range coefficients                     0
+ long-range coefficients              100000000
+ Omega coefficients                           0
+ if combine SR and LR in K                    0
+ Integral screening is                        0
+ Integral computing path is                   2
+ max size of driver memory is            800000
+ size of driver memory is                593474
+ size of scratch memory is              1809772
+ max col of scratch BK array               1296
+ max len of scratch array in speh3          155
+ max len of scratch index in speh4           18
+ max int batch size is                      520
+ min int batch size is                       52
+ fixed nKL is                                52
+ max L of basis functions is                  2
+ order of int derivative is                   0
+ number of shells is                        476
+ number of basis is                         980
+ number of cartesian basis is               980
+ number of contracted shell pairs         40883
+ number of primitive shell pairs          85450
+ maxK2 (contraction) of shell pair           25
+ max number of K2 of shell pair               1
+ max number of CS2 of shell pair           9949
+ max number of PS2 of shell pair          15240
+ mem total for path MDJ                  919692
+ -------------------------------------------------------
+ Smallest overlap matrix eigenvalue = 1.95E-04
+
+ Scale SEOQF with 1.000000e-02/1.000000e-01/1.000000e-02
+
+ Standard Electronic Orientation quadrupole field applied
+ Nucleus-field energy     =    -0.0000000158 hartrees
+ Guess from superposition of atomic densities
+ Warning:  Energy on first SCF cycle will be non-variational
+ SAD guess density has 380.000000 electrons
+
+ -----------------------------------------------------------------------
+  General SCF calculation program by
+  Eric Jon Sundstrom, Paul Horn, Yuezhi Mao, Dmitri Zuev, Alec White,
+  David Stuck, Shaama M.S., Shane Yost, Joonho Lee, David Small,
+  Daniel Levine, Susi Lehtola, Hugh Burton, Evgeny Epifanovsky
+ -----------------------------------------------------------------------
+ Exchange:     0.4200 Hartree-Fock + 0.5800 PBEh-3c
+ Correlation:  1.0000 PBEh-3c
+ Using SG-1 standard quadrature grid
+ Dispersion:   Grimme D3
+ using 8 threads for integral computing
+ -------------------------------------------------------
+ OpenMP Integral computing Module                
+ Release: version 2.0, May 2017, Q-Chem Inc. Pleasanton 
+ -------------------------------------------------------
+ -------------------------------------------------------
+ OpenMP BLAS3 based DFT computing Module                
+ Release: version 1.0, May 2013, Q-Chem Inc. Pittsburgh 
+ -------------------------------------------------------
+ A restricted SCF calculation will be
+ performed using DIIS
+ SCF converges when DIIS error is below 1.0e-08
+ ---------------------------------------
+  Cycle       Energy         DIIS error
+ ---------------------------------------
+    1   -2220.4848377191      2.80e-02  
+    2   -2201.8598590898      1.84e-03  
+    3   -2202.0526561529      1.40e-03  
+    4   -2202.2541803734      4.49e-04  
+    5   -2202.2744590719      1.95e-04  
+    6   -2202.2787346099      5.04e-05  
+    7   -2202.2789982186      1.48e-05  
+    8   -2202.2790225937      4.16e-06  
+    9   -2202.2790246686      9.87e-07  
+   10   -2202.2790249341      4.13e-07  
+   11   -2202.2790248878      1.47e-07  
+   12   -2202.2790247606      7.25e-08  
+   13   -2202.2790248849      1.79e-08  
+   14   -2202.2790248839      8.84e-09  Convergence criterion met
+ ---------------------------------------
+ SCF time:   CPU 8579.26s  wall 1122.00s 
+
+************** Final PCM Free Energy Summary **************
+ G_electrostatic  =      -0.02462795 hartree =     -15.45427353 kcal/mol
+ G_cavitation     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_dispersion     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_repulsion      =       0.00000000 hartree =       0.00000000 kcal/mol
+ --------------------------------------------------
+ Non-electrostatic Free Energy =       0.00000000 hartree =       0.00000000 kcal/mol
+ Total                         =      -0.02462795 hartree =     -15.45427353 kcal/mol
+ --------------------------------------------------
+ SCF Energy (H0 + V/2)                       =   -2202.27902488 
+ Solute Internal Energy (H0)                 =   -2202.25439693 
+ Total Free Energy (H0 + V/2 + non-elec)     =   -2202.27902488 hartree
+                                             = -1381950.94589926 kcal/mol
+***********************************************************
+
+ SCF   energy in the final basis set =    -2202.2790248839
+ Total energy in the final basis set =    -2202.2790248839
+ 
+ Direct TDDFT/TDA calculation will be performed
+ Exchange:     0.4200 Hartree-Fock + 0.5800 PBEh-3c
+ Correlation:  1.0000 PBEh-3c
+ Using SG-1 standard quadrature grid
+ Dispersion:   Grimme D3
+ Triplet excitation energies requested
+ Singlet excitation energies requested
+ Adding PCM contribution to the XC response
+ CIS energy converged when residual is below 10e- 6
+ ---------------------------------------------------
+ Iter    Rts Conv    Rts Left    Ttl Dev     Max Dev
+ ---------------------------------------------------
+   1         0           6      0.000332    0.000081
+   2         0           6      0.000145    0.000037
+   3         0           6      0.000122    0.000058
+   4         0           6      0.000091    0.000032
+   5         1           5      0.000027    0.000016
+   6         4           2      0.000012    0.000007
+   7         5           1      0.000005    0.000002
+   8         6           0      0.000003    0.000001    Roots Converged
+ ---------------------------------------------------
+ Triplets done: starting singlet calculation
+ ---------------------------------------------------
+ Iter    Rts Conv    Rts Left    Ttl Dev     Max Dev
+ ---------------------------------------------------
+   9         0           6      0.000576    0.000168
+  10         0           6      0.000206    0.000048
+  11         0           6      0.000101    0.000037
+  12         0           6      0.000039    0.000016
+  13         0           6      0.000019    0.000008
+  14         2           4      0.000008    0.000003
+  15         4           2      0.000005    0.000002
+  16         5           1      0.000004    0.000001
+  17         6           0      0.000003    0.000001    Roots Converged
+ ---------------------------------------------------
+ 
+ ---------------------------------------------------
+         TDDFT/TDA Excitation Energies              
+ ---------------------------------------------------
+
+ Excited state   1: excitation energy (eV) =    2.3926
+ Total energy for state  1:                 -2202.19109901 au
+    Multiplicity: Triplet
+    Trans. Mom.:  0.0000 X   0.0000 Y   0.0000 Z
+    Strength   :     0.0000000000
+    D(183) --> V(  2) amplitude = -0.2778
+    D(187) --> V(  1) amplitude =  0.8562
+    D(188) --> V(  1) amplitude =  0.2894
+
+ Excited state   2: excitation energy (eV) =    2.5131
+ Total energy for state  2:                 -2202.18667146 au
+    Multiplicity: Triplet
+    Trans. Mom.:  0.0000 X   0.0000 Y   0.0000 Z
+    Strength   :     0.0000000000
+    D(186) --> V(  2) amplitude = -0.5030
+    D(187) --> V(  1) amplitude = -0.2713
+    D(188) --> V(  1) amplitude =  0.7211
+    D(188) --> V(  4) amplitude =  0.2185
+
+ Excited state   3: excitation energy (eV) =    2.5561
+ Total energy for state  3:                 -2202.18508951 au
+    Multiplicity: Triplet
+    Trans. Mom.:  0.0000 X   0.0000 Y   0.0000 Z
+    Strength   :     0.0000000000
+    D(186) --> V(  1) amplitude =  0.6991
+    D(186) --> V(  4) amplitude =  0.2457
+    D(188) --> V(  2) amplitude = -0.5612
+
+ Excited state   4: excitation energy (eV) =    2.7165
+ Total energy for state  4:                 -2202.17919692 au
+    Multiplicity: Triplet
+    Trans. Mom.:  0.0000 X   0.0000 Y   0.0000 Z
+    Strength   :     0.0000000000
+    D(183) --> V(  1) amplitude =  0.2193
+    D(189) --> V(  1) amplitude = -0.2164
+    D(190) --> V(  1) amplitude =  0.8692
+
+ Excited state   5: excitation energy (eV) =    2.7861
+ Total energy for state  5:                 -2202.17663681 au
+    Multiplicity: Singlet
+    Trans. Mom.: -0.3117 X  -0.0065 Y  -0.2811 Z
+    Strength   :     0.0120283735
+    D(190) --> V(  1) amplitude =  0.9565
+
+ Excited state   6: excitation energy (eV) =    2.8174
+ Total energy for state  6:                 -2202.17548708 au
+    Multiplicity: Triplet
+    Trans. Mom.:  0.0000 X   0.0000 Y   0.0000 Z
+    Strength   :     0.0000000000
+    D(183) --> V(  1) amplitude =  0.6594
+    D(187) --> V(  2) amplitude = -0.5308
+    D(190) --> V(  1) amplitude = -0.3149
+
+ Excited state   7: excitation energy (eV) =    2.9007
+ Total energy for state  7:                 -2202.17242517 au
+    Multiplicity: Triplet
+    Trans. Mom.:  0.0000 X   0.0000 Y   0.0000 Z
+    Strength   :     0.0000000000
+    D(189) --> V(  1) amplitude =  0.9286
+
+ Excited state   8: excitation energy (eV) =    2.9338
+ Total energy for state  8:                 -2202.17120985 au
+    Multiplicity: Singlet
+    Trans. Mom.:  0.1790 X  -0.0083 Y  -0.1225 Z
+    Strength   :     0.0033877975
+    D(189) --> V(  1) amplitude =  0.9583
+
+ Excited state   9: excitation energy (eV) =    3.0724
+ Total energy for state  9:                 -2202.16611665 au
+    Multiplicity: Singlet
+    Trans. Mom.: -0.1411 X  -0.0091 Y   0.2223 Z
+    Strength   :     0.0052223808
+    D(187) --> V(  1) amplitude =  0.9243
+    D(188) --> V(  1) amplitude =  0.2705
+
+ Excited state  10: excitation energy (eV) =    3.2732
+ Total energy for state 10:                 -2202.15873847 au
+    Multiplicity: Singlet
+    Trans. Mom.: -1.9720 X  -0.0506 Y   3.4222 Z
+    Strength   :     1.2512023208
+    D(187) --> V(  1) amplitude = -0.2669
+    D(188) --> V(  1) amplitude =  0.9110
+
+ Excited state  11: excitation energy (eV) =    3.5648
+ Total energy for state 11:                 -2202.14802163 au
+    Multiplicity: Singlet
+    Trans. Mom.: -0.1043 X  -0.0709 Y  -0.0662 Z
+    Strength   :     0.0017719284
+    D(186) --> V(  1) amplitude =  0.9251
+    D(188) --> V(  2) amplitude = -0.2346
+
+ Excited state  12: excitation energy (eV) =    3.6531
+ Total energy for state 12:                 -2202.14477735 au
+    Multiplicity: Singlet
+    Trans. Mom.: -0.1866 X  -0.0365 Y  -0.0312 Z
+    Strength   :     0.0033223607
+    D(185) --> V(  1) amplitude =  0.9790
+ 
+ ---------------------------------------------------
+ Calculating Relaxed Density
+ ---------------------------------------------------
+ Iter    Rts Conv    Rts Left    Ttl Dev     Max Dev
+ ---------------------------------------------------
+   1         0           6      0.000358    0.000102
+   2         0           6      0.000141    0.000039
+   3         0           6      0.000032    0.000009
+   4         2           4      0.000009    0.000003
+   5         6           0      0.000000    0.000000    Roots Converged
+ ---------------------------------------------------
+ Triplets done- using as guess for singlets
+ ---------------------------------------------------
+ Iter    Rts Conv    Rts Left    Ttl Dev     Max Dev
+ ---------------------------------------------------
+   1         0           6      0.000507    0.000110
+   2         0           6      0.000191    0.000041
+   3         0           6      0.000044    0.000010
+   4         0           6      0.000015    0.000003
+   5         4           2      0.000002    0.000001
+   6         6           0      0.000000    0.000000    Roots Converged
+ ---------------------------------------------------
+  SETman timing summary (seconds)
+  CPU time             23953.28s
+  System time              0.01s
+  Wall time             6787.83s
+
+
+
+*********SPIN-ORBIT COUPLING JOB BEGINS HERE*********
+
+
+=======================================================================================
+    SPIN-ORBIT COUPLING BETWEEN THE SINGLET GROUND STATE AND EXCITED TRIPLET STATE
+=======================================================================================
+
+SOC between the singlet ground state and excited triplet states (ms=0):
+T1(ms=0)      0.000000  +  -0.058087i    cm-1
+T2(ms=0)      0.000000  +  -0.037755i    cm-1
+T3(ms=0)      0.000000  +  0.201910i    cm-1
+T4(ms=0)      0.000000  +  3.628207i    cm-1
+T5(ms=0)      0.000000  +  -1.429599i    cm-1
+T6(ms=0)      0.000000  +  -1.460447i    cm-1
+SOC between the singlet ground state and excited triplet states (ms=1):
+T1(ms=1)      -0.025467  + (-0.007711i)    cm-1
+T2(ms=1)      -0.087716  + (-0.096015i)    cm-1
+T3(ms=1)      0.007309  + (0.282101i)    cm-1
+T4(ms=1)      0.263407  + (4.618040i)    cm-1
+T5(ms=1)      -0.118278  + (-1.671879i)    cm-1
+T6(ms=1)      -0.165183  + (-2.131768i)    cm-1
+SOC between the singlet ground state and excited triplet states (ms=-1):
+T1(ms=-1)     -0.025467  - (-0.007711i)    cm-1
+T2(ms=-1)     -0.087716  - (-0.096015i)    cm-1
+T3(ms=-1)     0.007309  - (0.282101i)    cm-1
+T4(ms=-1)     0.263407  - (4.618040i)    cm-1
+T5(ms=-1)     -0.118278  - (-1.671879i)    cm-1
+T6(ms=-1)     -0.165183  - (-2.131768i)    cm-1
+Total SOC between the singlet ground state and excited triplet states:
+T1      0.069211    cm-1
+T2      0.187754    cm-1
+T3      0.447254    cm-1
+T4      7.480323    cm-1
+T5      2.768049    cm-1
+T6      3.358027    cm-1
+
+
+
+
+=======================================================================================
+                     SPIN-ORBIT COUPLING BETWEEN EXCITED TRIPLET STATES
+=======================================================================================
+
+SOC between the T1 (ms=0) state and excited triplet states (ms=1):
+T2(ms=1)      0.033375  + (0.039514i)    cm-1
+T3(ms=1)      -0.391280  + (-0.047506i)    cm-1
+T4(ms=1)      0.059862  + (-0.244522i)    cm-1
+T5(ms=1)      0.059308  + (0.077187i)    cm-1
+T6(ms=1)      0.052039  + (-0.120350i)    cm-1
+SOC between the T1 (ms=0) state and excited triplet states (ms=-1):
+T2(ms=-1)     -0.033375  + (0.039514i)    cm-1
+T3(ms=-1)     0.391280  + (-0.047506i)    cm-1
+T4(ms=-1)     -0.059862  + (-0.244522i)    cm-1
+T5(ms=-1)     -0.059308  + (0.077187i)    cm-1
+T6(ms=-1)     -0.052039  + (-0.120350i)    cm-1
+SOC between the T1 (ms=1) state and excited triplet states (ms=0):
+T2(ms=0)      -0.033375  + (0.039514i)    cm-1
+T3(ms=0)      0.391280  + (-0.047506i)    cm-1
+T4(ms=0)      -0.059862  + (-0.244522i)    cm-1
+T5(ms=0)      -0.059308  + (0.077187i)    cm-1
+T6(ms=0)      -0.052039  + (-0.120350i)    cm-1
+SOC between the T1 (ms=1) state and excited triplet states (ms=1):
+T2(ms=1)      0.000000  + (-0.026063i)    cm-1
+T3(ms=1)      0.000000  + (0.025554i)    cm-1
+T4(ms=1)      0.000000  + (0.489055i)    cm-1
+T5(ms=1)      0.000000  + (-0.202750i)    cm-1
+T6(ms=1)      0.000000  + (0.147118i)    cm-1
+SOC between the T1 (ms=-1) state and excited triplet states (ms=0):
+T2(ms=0)      0.033375  + (0.039514i)    cm-1
+T3(ms=0)      -0.391280  + (-0.047506i)    cm-1
+T4(ms=0)      0.059862  + (-0.244522i)    cm-1
+T5(ms=0)      0.059308  + (0.077187i)    cm-1
+T6(ms=0)      0.052039  + (-0.120350i)    cm-1
+SOC between the T1 (ms=-1) state and excited triplet states (ms=-1):
+T2(ms=-1)     0.000000  + (0.026063i)    cm-1
+T3(ms=-1)     0.000000  + (-0.025554i)    cm-1
+T4(ms=-1)     0.000000  + (-0.489055i)    cm-1
+T5(ms=-1)     0.000000  + (0.202750i)    cm-1
+T6(ms=-1)     0.000000  + (-0.147118i)    cm-1
+Total SOC between the T1 state and excited triplet states:
+T2      0.109816    cm-1
+T3      0.789134    cm-1
+T4      0.855481    cm-1
+T5      0.346578    cm-1
+T6      0.334748    cm-1
+
+
+
+SOC between the T2 (ms=0) state and excited triplet states (ms=1):
+T3(ms=1)      0.077306  + (-0.053633i)    cm-1
+T4(ms=1)      0.183625  + (-0.306349i)    cm-1
+T5(ms=1)      0.409667  + (0.218529i)    cm-1
+T6(ms=1)      -0.008046  + (-0.493620i)    cm-1
+SOC between the T2 (ms=0) state and excited triplet states (ms=-1):
+T3(ms=-1)     -0.077306  + (-0.053633i)    cm-1
+T4(ms=-1)     -0.183625  + (-0.306349i)    cm-1
+T5(ms=-1)     -0.409667  + (0.218529i)    cm-1
+T6(ms=-1)     0.008046  + (-0.493620i)    cm-1
+SOC between the T2 (ms=1) state and excited triplet states (ms=0):
+T3(ms=0)      -0.077306  + (-0.053633i)    cm-1
+T4(ms=0)      -0.183625  + (-0.306349i)    cm-1
+T5(ms=0)      -0.409667  + (0.218529i)    cm-1
+T6(ms=0)      0.008046  + (-0.493620i)    cm-1
+SOC between the T2 (ms=1) state and excited triplet states (ms=1):
+T3(ms=1)      0.000000  + (0.137314i)    cm-1
+T4(ms=1)      0.000000  + (0.610590i)    cm-1
+T5(ms=1)      0.000000  + (-0.287597i)    cm-1
+T6(ms=1)      0.000000  + (1.308984i)    cm-1
+SOC between the T2 (ms=-1) state and excited triplet states (ms=0):
+T3(ms=0)      0.077306  + (-0.053633i)    cm-1
+T4(ms=0)      0.183625  + (-0.306349i)    cm-1
+T5(ms=0)      0.409667  + (0.218529i)    cm-1
+T6(ms=0)      -0.008046  + (-0.493620i)    cm-1
+SOC between the T2 (ms=-1) state and excited triplet states (ms=-1):
+T3(ms=-1)     0.000000  + (-0.137314i)    cm-1
+T4(ms=-1)     0.000000  + (-0.610590i)    cm-1
+T5(ms=-1)     0.000000  + (0.287597i)    cm-1
+T6(ms=-1)     0.000000  + (-1.308984i)    cm-1
+Total SOC between the T2 state and excited triplet states:
+T3      0.270409    cm-1
+T4      1.120675    cm-1
+T5      1.013782    cm-1
+T6      2.098042    cm-1
+
+
+
+SOC between the T3 (ms=0) state and excited triplet states (ms=1):
+T4(ms=1)      -0.009913  + (0.350093i)    cm-1
+T5(ms=1)      0.047731  + (-0.205932i)    cm-1
+T6(ms=1)      -0.025219  + (-0.250342i)    cm-1
+SOC between the T3 (ms=0) state and excited triplet states (ms=-1):
+T4(ms=-1)     0.009913  + (0.350093i)    cm-1
+T5(ms=-1)     -0.047731  + (-0.205932i)    cm-1
+T6(ms=-1)     0.025219  + (-0.250342i)    cm-1
+SOC between the T3 (ms=1) state and excited triplet states (ms=0):
+T4(ms=0)      0.009913  + (0.350093i)    cm-1
+T5(ms=0)      -0.047731  + (-0.205932i)    cm-1
+T6(ms=0)      0.025219  + (-0.250342i)    cm-1
+SOC between the T3 (ms=1) state and excited triplet states (ms=1):
+T4(ms=1)      0.000000  + (0.342273i)    cm-1
+T5(ms=1)      0.000000  + (-0.204550i)    cm-1
+T6(ms=1)      0.000000  + (-0.045460i)    cm-1
+SOC between the T3 (ms=-1) state and excited triplet states (ms=0):
+T4(ms=0)      -0.009913  + (0.350093i)    cm-1
+T5(ms=0)      0.047731  + (-0.205932i)    cm-1
+T6(ms=0)      -0.025219  + (-0.250342i)    cm-1
+SOC between the T3 (ms=-1) state and excited triplet states (ms=-1):
+T4(ms=-1)     0.000000  + (-0.342273i)    cm-1
+T5(ms=-1)     0.000000  + (0.204550i)    cm-1
+T6(ms=-1)     0.000000  + (0.045460i)    cm-1
+Total SOC between the T3 state and excited triplet states:
+T4      0.851443    cm-1
+T5      0.512276    cm-1
+T6      0.507309    cm-1
+
+
+
+SOC between the T4 (ms=0) state and excited triplet states (ms=1):
+T5(ms=1)      0.097703  + (-0.385236i)    cm-1
+T6(ms=1)      0.005502  + (0.378884i)    cm-1
+SOC between the T4 (ms=0) state and excited triplet states (ms=-1):
+T5(ms=-1)     -0.097703  + (-0.385236i)    cm-1
+T6(ms=-1)     -0.005502  + (0.378884i)    cm-1
+SOC between the T4 (ms=1) state and excited triplet states (ms=0):
+T5(ms=0)      -0.097703  + (-0.385236i)    cm-1
+T6(ms=0)      -0.005502  + (0.378884i)    cm-1
+SOC between the T4 (ms=1) state and excited triplet states (ms=1):
+T5(ms=1)      0.000000  + (-0.295723i)    cm-1
+T6(ms=1)      0.000000  + (0.323756i)    cm-1
+SOC between the T4 (ms=-1) state and excited triplet states (ms=0):
+T5(ms=0)      0.097703  + (-0.385236i)    cm-1
+T6(ms=0)      0.005502  + (0.378884i)    cm-1
+SOC between the T4 (ms=-1) state and excited triplet states (ms=-1):
+T5(ms=-1)     0.000000  + (0.295723i)    cm-1
+T6(ms=-1)     0.000000  + (-0.323756i)    cm-1
+Total SOC between the T4 state and excited triplet states:
+T5      0.898173    cm-1
+T6      0.885420    cm-1
+
+
+
+SOC between the T5 (ms=0) state and excited triplet states (ms=1):
+T6(ms=1)      -0.028149  + (0.749576i)    cm-1
+SOC between the T5 (ms=0) state and excited triplet states (ms=-1):
+T6(ms=-1)     0.028149  + (0.749576i)    cm-1
+SOC between the T5 (ms=1) state and excited triplet states (ms=0):
+T6(ms=0)      0.028149  + (0.749576i)    cm-1
+SOC between the T5 (ms=1) state and excited triplet states (ms=1):
+T6(ms=1)      0.000000  + (0.582921i)    cm-1
+SOC between the T5 (ms=-1) state and excited triplet states (ms=0):
+T6(ms=0)      -0.028149  + (0.749576i)    cm-1
+SOC between the T5 (ms=-1) state and excited triplet states (ms=-1):
+T6(ms=-1)     0.000000  + (-0.582921i)    cm-1
+Total SOC between the T5 state and excited triplet states:
+T6      1.711789    cm-1
+
+
+
+
+
+
+
+=======================================================================================
+         SPIN-ORBIT COUPLING BETWEEN EXCITED SINGLET STATES AND TRIPLET STATES
+=======================================================================================
+
+SOC between the S1 state and excited triplet states (ms=0):
+T1(ms=0)      0.000000  +  -0.422253i    cm-1
+T2(ms=0)      0.000000  +  -0.742017i    cm-1
+T3(ms=0)      0.000000  +  -0.356123i    cm-1
+T4(ms=0)      0.000000  +  -0.116710i    cm-1
+T5(ms=0)      0.000000  +  -0.287196i    cm-1
+T6(ms=0)      0.000000  +  0.010795i    cm-1
+SOC between the S1 state and excited triplet states (ms=1):
+T1(ms=1)      (-0.010693)  + (-0.220815i)    cm-1
+T2(ms=1)      (0.050921)  + (-0.383385i)    cm-1
+T3(ms=1)      (-0.033534)  + (0.332411i)    cm-1
+T4(ms=1)      (-0.028802)  + (0.088956i)    cm-1
+T5(ms=1)      (-0.061177)  + (0.405235i)    cm-1
+T6(ms=1)      (-0.022125)  + (-0.078174i)    cm-1
+SOC between the S1 state and excited triplet states (ms=-1):
+T1(ms=-1)    -(-0.010693)  + (-0.220815i)    cm-1
+T2(ms=-1)    -(0.050921)  + (-0.383385i)    cm-1
+T3(ms=-1)    -(-0.033534)  + (0.332411i)    cm-1
+T4(ms=-1)    -(-0.028802)  + (0.088956i)    cm-1
+T5(ms=-1)    -(-0.061177)  + (0.405235i)    cm-1
+T6(ms=-1)    -(-0.022125)  + (-0.078174i)    cm-1
+Total SOC between the S1 state and excited triplet states:
+T1      0.525399    cm-1
+T2      0.921816    cm-1
+T3      0.591664    cm-1
+T4      0.176371    cm-1
+T5      0.646837    cm-1
+T6      0.115404    cm-1
+
+
+
+SOC between the S2 state and excited triplet states (ms=0):
+T1(ms=0)      0.000000  +  -0.169413i    cm-1
+T2(ms=0)      0.000000  +  -1.204971i    cm-1
+T3(ms=0)      0.000000  +  0.047095i    cm-1
+T4(ms=0)      0.000000  +  -0.320720i    cm-1
+T5(ms=0)      0.000000  +  -0.506283i    cm-1
+T6(ms=0)      0.000000  +  -0.127251i    cm-1
+SOC between the S2 state and excited triplet states (ms=1):
+T1(ms=1)      (-0.010632)  + (-0.133263i)    cm-1
+T2(ms=1)      (-0.036475)  + (-0.452305i)    cm-1
+T3(ms=1)      (-0.024049)  + (-0.249279i)    cm-1
+T4(ms=1)      (0.012897)  + (0.315526i)    cm-1
+T5(ms=1)      (0.012908)  + (0.682819i)    cm-1
+T6(ms=1)      (0.007896)  + (0.051037i)    cm-1
+SOC between the S2 state and excited triplet states (ms=-1):
+T1(ms=-1)    -(-0.010632)  + (-0.133263i)    cm-1
+T2(ms=-1)    -(-0.036475)  + (-0.452305i)    cm-1
+T3(ms=-1)    -(-0.024049)  + (-0.249279i)    cm-1
+T4(ms=-1)    -(0.012897)  + (0.315526i)    cm-1
+T5(ms=-1)    -(0.012908)  + (0.682819i)    cm-1
+T6(ms=-1)    -(0.007896)  + (0.051037i)    cm-1
+Total SOC between the S2 state and excited triplet states:
+T1      0.253860    cm-1
+T2      1.365202    cm-1
+T3      0.357289    cm-1
+T4      0.549825    cm-1
+T5      1.090476    cm-1
+T6      0.146720    cm-1
+
+
+
+SOC between the S3 state and excited triplet states (ms=0):
+T1(ms=0)      0.000000  +  -0.008821i    cm-1
+T2(ms=0)      0.000000  +  -0.052675i    cm-1
+T3(ms=0)      0.000000  +  0.025629i    cm-1
+T4(ms=0)      0.000000  +  0.590057i    cm-1
+T5(ms=0)      0.000000  +  -0.254378i    cm-1
+T6(ms=0)      0.000000  +  0.069029i    cm-1
+SOC between the S3 state and excited triplet states (ms=1):
+T1(ms=1)      (-0.001241)  + (-0.005500i)    cm-1
+T2(ms=1)      (-0.018394)  + (-0.052293i)    cm-1
+T3(ms=1)      (0.261807)  + (0.054820i)    cm-1
+T4(ms=1)      (-0.027236)  + (0.290277i)    cm-1
+T5(ms=1)      (-0.034405)  + (-0.113094i)    cm-1
+T6(ms=1)      (-0.036794)  + (0.073680i)    cm-1
+SOC between the S3 state and excited triplet states (ms=-1):
+T1(ms=-1)    -(-0.001241)  + (-0.005500i)    cm-1
+T2(ms=-1)    -(-0.018394)  + (-0.052293i)    cm-1
+T3(ms=-1)    -(0.261807)  + (0.054820i)    cm-1
+T4(ms=-1)    -(-0.027236)  + (0.290277i)    cm-1
+T5(ms=-1)    -(-0.034405)  + (-0.113094i)    cm-1
+T6(ms=-1)    -(-0.036794)  + (0.073680i)    cm-1
+Total SOC between the S3 state and excited triplet states:
+T1      0.011891    cm-1
+T2      0.094448    cm-1
+T3      0.379148    cm-1
+T4      0.719842    cm-1
+T5      0.304395    cm-1
+T6      0.135388    cm-1
+
+
+
+SOC between the S4 state and excited triplet states (ms=0):
+T1(ms=0)      0.000000  +  -0.019284i    cm-1
+T2(ms=0)      0.000000  +  -0.169924i    cm-1
+T3(ms=0)      0.000000  +  0.185346i    cm-1
+T4(ms=0)      0.000000  +  0.944931i    cm-1
+T5(ms=0)      0.000000  +  -0.531945i    cm-1
+T6(ms=0)      0.000000  +  1.900260i    cm-1
+SOC between the S4 state and excited triplet states (ms=1):
+T1(ms=1)      (0.001197)  + (0.026690i)    cm-1
+T2(ms=1)      (0.005746)  + (-0.072246i)    cm-1
+T3(ms=1)      (-0.044806)  + (0.073098i)    cm-1
+T4(ms=1)      (-0.229191)  + (0.465354i)    cm-1
+T5(ms=1)      (-0.443929)  + (-0.229885i)    cm-1
+T6(ms=1)      (0.021063)  + (0.755500i)    cm-1
+SOC between the S4 state and excited triplet states (ms=-1):
+T1(ms=-1)    -(0.001197)  + (0.026690i)    cm-1
+T2(ms=-1)    -(0.005746)  + (-0.072246i)    cm-1
+T3(ms=-1)    -(-0.044806)  + (0.073098i)    cm-1
+T4(ms=-1)    -(-0.229191)  + (0.465354i)    cm-1
+T5(ms=-1)    -(-0.443929)  + (-0.229885i)    cm-1
+T6(ms=-1)    -(0.021063)  + (0.755500i)    cm-1
+Total SOC between the S4 state and excited triplet states:
+T1      0.042421    cm-1
+T2      0.198441    cm-1
+T3      0.221484    cm-1
+T4      1.196269    cm-1
+T5      0.884763    cm-1
+T6      2.180237    cm-1
+
+
+
+SOC between the S5 state and excited triplet states (ms=0):
+T1(ms=0)      0.000000  +  0.083860i    cm-1
+T2(ms=0)      0.000000  +  0.132447i    cm-1
+T3(ms=0)      0.000000  +  0.052590i    cm-1
+T4(ms=0)      0.000000  +  0.468228i    cm-1
+T5(ms=0)      0.000000  +  -0.127453i    cm-1
+T6(ms=0)      0.000000  +  -0.229365i    cm-1
+SOC between the S5 state and excited triplet states (ms=1):
+T1(ms=1)      (-0.515108)  + (-0.045301i)    cm-1
+T2(ms=1)      (0.086918)  + (0.049622i)    cm-1
+T3(ms=1)      (0.020459)  + (-0.015668i)    cm-1
+T4(ms=1)      (0.129332)  + (-0.550713i)    cm-1
+T5(ms=1)      (-0.043270)  + (0.104723i)    cm-1
+T6(ms=1)      (0.026108)  + (0.356999i)    cm-1
+SOC between the S5 state and excited triplet states (ms=-1):
+T1(ms=-1)    -(-0.515108)  + (-0.045301i)    cm-1
+T2(ms=-1)    -(0.086918)  + (0.049622i)    cm-1
+T3(ms=-1)    -(0.020459)  + (-0.015668i)    cm-1
+T4(ms=-1)    -(0.129332)  + (-0.550713i)    cm-1
+T5(ms=-1)    -(-0.043270)  + (0.104723i)    cm-1
+T6(ms=-1)    -(0.026108)  + (0.356999i)    cm-1
+Total SOC between the S5 state and excited triplet states:
+T1      0.736077    cm-1
+T2      0.193847    cm-1
+T3      0.063983    cm-1
+T4      0.926963    cm-1
+T5      0.204750    cm-1
+T6      0.555759    cm-1
+
+
+
+SOC between the S6 state and excited triplet states (ms=0):
+T1(ms=0)      0.000000  +  -0.010363i    cm-1
+T2(ms=0)      0.000000  +  0.029740i    cm-1
+T3(ms=0)      0.000000  +  0.054349i    cm-1
+T4(ms=0)      0.000000  +  0.440705i    cm-1
+T5(ms=0)      0.000000  +  -0.077754i    cm-1
+T6(ms=0)      0.000000  +  0.316498i    cm-1
+SOC between the S6 state and excited triplet states (ms=1):
+T1(ms=1)      (0.108974)  + (-0.052286i)    cm-1
+T2(ms=1)      (0.034469)  + (-0.043022i)    cm-1
+T3(ms=1)      (0.026733)  + (0.014171i)    cm-1
+T4(ms=1)      (0.226955)  + (0.163286i)    cm-1
+T5(ms=1)      (-0.150631)  + (-0.093783i)    cm-1
+T6(ms=1)      (0.028287)  + (-0.037955i)    cm-1
+SOC between the S6 state and excited triplet states (ms=-1):
+T1(ms=-1)    -(0.108974)  + (-0.052286i)    cm-1
+T2(ms=-1)    -(0.034469)  + (-0.043022i)    cm-1
+T3(ms=-1)    -(0.026733)  + (0.014171i)    cm-1
+T4(ms=-1)    -(0.226955)  + (0.163286i)    cm-1
+T5(ms=-1)    -(-0.150631)  + (-0.093783i)    cm-1
+T6(ms=-1)    -(0.028287)  + (-0.037955i)    cm-1
+Total SOC between the S6 state and excited triplet states:
+T1      0.171248    cm-1
+T2      0.083441    cm-1
+T3      0.069172    cm-1
+T4      0.592083    cm-1
+T5      0.262708    cm-1
+T6      0.323500    cm-1
+
+
+
+
+
+
+            *********SOC CODE ENDS HERE*********
+
+
+
+ 
+ --------------------------------------------------------------
+ 
+                    Orbital Energies (a.u.)
+ --------------------------------------------------------------
+ 
+ Alpha MOs
+ -- Occupied --
+-19.524 -19.520 -10.503 -10.499 -10.480 -10.476 -10.470 -10.470
+-10.470 -10.469 -10.468 -10.468 -10.468 -10.468 -10.468 -10.467
+-10.467 -10.467 -10.465 -10.465 -10.465 -10.465 -10.465 -10.465
+-10.462 -10.462 -10.462 -10.462 -10.459 -10.458 -10.457 -10.456
+-10.454 -10.452 -10.452 -10.452 -10.450 -10.448 -10.439 -10.439
+-10.438 -10.438 -10.436 -10.433 -10.432 -10.431 -10.429 -10.427
+-10.427 -10.424 -10.422 -10.419 -10.418 -10.414  -6.953  -6.951
+ -1.180  -1.176  -1.022  -1.021  -0.968  -0.964  -0.955  -0.952
+ -0.938  -0.937  -0.914  -0.906  -0.884  -0.880  -0.863  -0.859
+ -0.854  -0.851  -0.850  -0.850  -0.827  -0.819  -0.816  -0.815
+ -0.812  -0.809  -0.774  -0.769  -0.763  -0.760  -0.739  -0.732
+ -0.730  -0.724  -0.709  -0.707  -0.693  -0.684  -0.683  -0.669
+ -0.659  -0.651  -0.648  -0.645  -0.637  -0.635  -0.597  -0.596
+ -0.594  -0.590  -0.587  -0.583  -0.579  -0.578  -0.577  -0.560
+ -0.557  -0.547  -0.545  -0.537  -0.531  -0.530  -0.525  -0.525
+ -0.515  -0.511  -0.506  -0.501  -0.499  -0.496  -0.495  -0.493
+ -0.492  -0.492  -0.490  -0.489  -0.486  -0.483  -0.481  -0.474
+ -0.473  -0.471  -0.470  -0.469  -0.465  -0.463  -0.459  -0.456
+ -0.450  -0.445  -0.442  -0.440  -0.438  -0.431  -0.429  -0.428
+ -0.424  -0.422  -0.418  -0.414  -0.411  -0.409  -0.406  -0.402
+ -0.401  -0.400  -0.400  -0.397  -0.395  -0.394  -0.386  -0.383
+ -0.381  -0.376  -0.367  -0.364  -0.363  -0.358  -0.356  -0.353
+ -0.342  -0.340  -0.324  -0.319  -0.301  -0.300  -0.287  -0.277
+ -0.274  -0.267  -0.263  -0.261  -0.252  -0.247
+ -- Virtual --
+ -0.096  -0.064  -0.042  -0.034  -0.010   0.001   0.010   0.025
+  0.029   0.035   0.038   0.040   0.065   0.077   0.082   0.087
+  0.118   0.120   0.145   0.148   0.149   0.155   0.159   0.161
+  0.163   0.164   0.165   0.168   0.169   0.171   0.179   0.183
+  0.186   0.187   0.189   0.191   0.195   0.197   0.199   0.200
+  0.200   0.202   0.204   0.206   0.213   0.215   0.215   0.217
+  0.218   0.220   0.220   0.224   0.224   0.226   0.228   0.231
+  0.232   0.234   0.236   0.237   0.239   0.240   0.246   0.247
+  0.249   0.250   0.252   0.255   0.258   0.266   0.266   0.268
+  0.269   0.272   0.282   0.283   0.284   0.287   0.289   0.296
+  0.297   0.299   0.306   0.308   0.308   0.312   0.318   0.321
+  0.324   0.326   0.332   0.334   0.335   0.338   0.346   0.347
+  0.348   0.359   0.361   0.377   0.381   0.389   0.395   0.400
+  0.403   0.412   0.415   0.416   0.418   0.426   0.435   0.437
+  0.446   0.450   0.455   0.457   0.460   0.464   0.478   0.479
+  0.483   0.487   0.488   0.493   0.498   0.500   0.503   0.505
+  0.508   0.515   0.521   0.521   0.522   0.523   0.524   0.527
+  0.531   0.531   0.532   0.534   0.535   0.538   0.545   0.548
+  0.550   0.551   0.553   0.556   0.557   0.559   0.560   0.562
+  0.565   0.566   0.572   0.574   0.575   0.577   0.578   0.582
+  0.583   0.583   0.585   0.586   0.591   0.593   0.594   0.595
+  0.598   0.600   0.603   0.607   0.610   0.613   0.614   0.615
+  0.618   0.619   0.620   0.621   0.626   0.627   0.632   0.633
+  0.636   0.638   0.646   0.649   0.651   0.651   0.654   0.656
+  0.660   0.663   0.670   0.672   0.673   0.677   0.679   0.687
+  0.693   0.697   0.698   0.703   0.706   0.709   0.711   0.713
+  0.715   0.721   0.723   0.724   0.729   0.730   0.732   0.738
+  0.742   0.748   0.751   0.753   0.759   0.761   0.766   0.769
+  0.769   0.772   0.775   0.776   0.784   0.787   0.791   0.797
+  0.800   0.806   0.815   0.820   0.823   0.829   0.833   0.837
+  0.839   0.840   0.845   0.848   0.858   0.866   0.873   0.885
+  0.890   0.895   0.900   0.903   0.909   0.913   0.916   0.920
+  0.932   0.941   0.945   0.947   0.951   0.953   0.957   0.961
+  0.961   0.971   0.975   0.982   0.985   0.988   0.988   0.989
+  0.991   0.993   0.998   1.001   1.003   1.005   1.008   1.009
+  1.011   1.012   1.020   1.021   1.029   1.033   1.034   1.035
+  1.036   1.037   1.037   1.040   1.044   1.050   1.053   1.057
+  1.058   1.063   1.063   1.068   1.068   1.074   1.077   1.080
+  1.083   1.086   1.086   1.091   1.095   1.098   1.103   1.108
+  1.115   1.119   1.120   1.123   1.128   1.134   1.138   1.145
+  1.146   1.153   1.156   1.157   1.162   1.163   1.166   1.175
+  1.178   1.180   1.185   1.188   1.190   1.202   1.206   1.211
+  1.216   1.226   1.233   1.242   1.247   1.253   1.255   1.263
+  1.264   1.271   1.275   1.281   1.282   1.291   1.293   1.295
+  1.295   1.298   1.300   1.302   1.304   1.310   1.314   1.322
+  1.326   1.337   1.341   1.347   1.351   1.357   1.363   1.367
+  1.369   1.372   1.372   1.375   1.386   1.389   1.401   1.404
+  1.406   1.411   1.418   1.425   1.431   1.433   1.435   1.436
+  1.436   1.445   1.448   1.453   1.459   1.467   1.478   1.485
+  1.496   1.507   1.508   1.511   1.514   1.514   1.516   1.517
+  1.522   1.523   1.525   1.527   1.528   1.532   1.532   1.537
+  1.542   1.545   1.553   1.554   1.560   1.561   1.565   1.574
+  1.575   1.584   1.585   1.593   1.595   1.600   1.610   1.615
+  1.619   1.622   1.635   1.641   1.650   1.655   1.660   1.674
+  1.679   1.689   1.703   1.705   1.737   1.744   1.755   1.758
+  1.762   1.769   1.777   1.781   1.790   1.796   1.801   1.803
+  1.804   1.805   1.807   1.810   1.811   1.814   1.829   1.842
+  1.852   1.857   1.880   1.884   1.894   1.901   1.902   1.913
+  1.914   1.919   1.923   1.925   1.935   1.939   1.946   1.951
+  1.953   1.965   1.970   1.974   1.979   1.980   1.982   1.989
+  1.996   1.996   1.998   2.004   2.019   2.023   2.024   2.033
+  2.035   2.046   2.047   2.049   2.051   2.053   2.069   2.071
+  2.077   2.084   2.088   2.090   2.096   2.101   2.107   2.108
+  2.111   2.124   2.126   2.131   2.141   2.148   2.150   2.153
+  2.154   2.160   2.162   2.165   2.169   2.179   2.184   2.190
+  2.197   2.199   2.199   2.219   2.227   2.228   2.229   2.239
+  2.241   2.250   2.251   2.257   2.258   2.267   2.269   2.273
+  2.274   2.281   2.284   2.289   2.296   2.304   2.307   2.314
+  2.317   2.317   2.319   2.321   2.330   2.332   2.335   2.341
+  2.346   2.348   2.350   2.354   2.355   2.359   2.362   2.365
+  2.369   2.372   2.383   2.385   2.391   2.404   2.405   2.410
+  2.412   2.416   2.419   2.423   2.429   2.433   2.434   2.439
+  2.446   2.451   2.458   2.467   2.473   2.474   2.487   2.487
+  2.491   2.495   2.504   2.507   2.513   2.523   2.531   2.535
+  2.547   2.561   2.569   2.581   2.609   2.625   2.632   2.638
+  2.638   2.640   2.643   2.648   2.659   2.667   2.678   2.682
+  2.703   2.707   2.710   2.722   2.725   2.727   2.728   2.746
+  2.748   2.755   2.771   2.772   2.774   2.780   2.781   2.783
+  2.786   2.787   2.790   2.794   2.800   2.804   2.810   2.812
+  2.817   2.818   2.839   2.849   2.851   2.854   2.869   2.871
+  2.897   2.898   2.899   2.904   2.918   2.926   2.936   2.940
+  2.952   2.976   2.993   3.003   3.005   3.026   3.045   3.061
+  3.077   3.078   3.084   3.087   3.098   3.107   3.114   3.233
+  3.249   3.252   3.316   3.320   3.399   3.438   3.446   3.486
+  3.489   3.491   3.547   3.557   3.662   3.676   9.580   9.727
+ 13.137  13.171  13.405  13.491  13.492  13.510  13.522  13.543
+ 13.685  13.693  13.727  13.773  13.777  13.787  13.791  13.800
+ 13.820  13.839  13.856  13.888  13.897  13.905  13.937  13.994
+ 13.999  14.008  14.031  14.034  14.045  14.049  14.131  14.156
+ 14.158  14.192  14.206  14.212  14.219  14.263  14.277  14.283
+ 14.303  14.308  14.335  14.337  14.508  14.512  14.561  14.571
+ 14.571  14.578  14.579  14.581  25.788  25.793
+ --------------------------------------------------------------
+ 
+          Ground-State Mulliken Net Atomic Charges
+
+     Atom                 Charge (a.u.)
+  ----------------------------------------
+      1 C                    -0.153302
+      2 C                    -0.397102
+      3 H                     0.251315
+      4 C                     0.070516
+      5 C                     0.093495
+      6 C                    -0.403040
+      7 H                     0.257267
+      8 C                    -0.155235
+      9 C                     0.176834
+     10 C                    -0.390172
+     11 H                     0.251294
+     12 C                    -0.067021
+     13 C                     0.224316
+     14 C                     0.179667
+     15 C                    -0.399089
+     16 H                     0.252984
+     17 C                    -0.232560
+     18 H                     0.256106
+     19 C                    -0.347110
+     20 H                     0.251718
+     21 C                    -0.351524
+     22 H                     0.252229
+     23 C                    -0.229959
+     24 H                     0.255882
+     25 B                     0.671337
+     26 C                    -0.159243
+     27 C                    -0.387221
+     28 H                     0.249721
+     29 C                     0.067896
+     30 C                     0.093624
+     31 C                    -0.395754
+     32 H                     0.253482
+     33 C                    -0.158274
+     34 C                     0.178027
+     35 C                    -0.390256
+     36 H                     0.251084
+     37 C                    -0.066480
+     38 C                     0.222494
+     39 C                     0.178096
+     40 C                    -0.399179
+     41 H                     0.252502
+     42 C                    -0.350692
+     43 H                     0.252140
+     44 C                    -0.229777
+     45 H                     0.255782
+     46 C                    -0.232722
+     47 H                     0.255785
+     48 C                    -0.346420
+     49 H                     0.251731
+     50 B                     0.673931
+     51 C                    -0.223043
+     52 C                     0.072735
+     53 C                    -0.444151
+     54 H                     0.254362
+     55 C                     0.396165
+     56 O                    -0.466315
+     57 C                    -0.402628
+     58 H                     0.241262
+     59 C                     0.054777
+     60 C                    -0.425755
+     61 H                     0.250778
+     62 H                     0.218983
+     63 H                     0.218809
+     64 C                    -0.772928
+     65 H                     0.254947
+     66 H                     0.244731
+     67 H                     0.244129
+     68 C                    -0.551489
+     69 H                     0.243052
+     70 H                     0.246408
+     71 C                    -0.656371
+     72 H                     0.233751
+     73 H                     0.224739
+     74 H                     0.225721
+     75 C                    -0.229499
+     76 C                     0.069948
+     77 C                    -0.439570
+     78 H                     0.254178
+     79 C                     0.394103
+     80 O                    -0.466971
+     81 C                    -0.403778
+     82 H                     0.241055
+     83 C                     0.053214
+     84 C                    -0.426148
+     85 H                     0.251725
+     86 H                     0.218821
+     87 H                     0.218753
+     88 C                    -0.772249
+     89 H                     0.254374
+     90 H                     0.245231
+     91 H                     0.245067
+     92 C                    -0.549726
+     93 H                     0.242173
+     94 H                     0.248788
+     95 C                    -0.651847
+     96 H                     0.229796
+     97 H                     0.226984
+     98 H                     0.223785
+  ----------------------------------------
+  Sum of atomic charges =    -0.000000
+
+ -----------------------------------------------------------------
+                    Cartesian Multipole Moments
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -0.0000
+    Dipole Moment (Debye)
+         X      -0.0331      Y       0.1114      Z      -0.1169
+       Tot       0.1649
+    Quadrupole Moments (Debye-Ang)
+        XX    -263.0593     XY      22.6734     YY    -320.4164
+        XZ       0.1215     YZ      12.2689     ZZ    -262.6324
+    Octopole Moments (Debye-Ang^2)
+       XXX     -31.5260    XXY      13.5248    XYY     -27.7713
+       YYY     -24.1675    XXZ     383.0295    XYZ     -46.5381
+       YYZ     462.0740    XZZ     -28.5815    YZZ     -38.5271
+       ZZZ    1136.1416
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX  -21463.3198   XXXY     277.6150   XXYY   -4573.6698
+      XYYY    -814.5060   YYYY   -2914.2636   XXXZ    2164.1562
+      XXYZ     461.1759   XYYZ    1286.9538   YYYZ    -188.5803
+      XXZZ   -7902.8505   XYZZ     202.7911   YYZZ   -6654.4773
+      XZZZ    1186.2311   YZZZ     -44.7035   ZZZZ  -28231.5705
+ -----------------------------------------------------------------
+ -----------------------------------------------------------------
+               TDA Excited-State Multipoles, State  1
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -0.0000
+    Dipole Moment (Debye)
+         X       0.1003      Y       0.1288      Z      -0.1079
+       Tot       0.1956
+    Quadrupole Moments (Debye-Ang)
+        XX    -266.4778     XY      22.5839     YY    -321.5744
+        XZ      -5.0757     YZ      12.0410     ZZ    -260.0387
+    Octopole Moments (Debye-Ang^2)
+       XXX     -25.2195    XXY      13.4601    XYY     -27.9617
+       YYY     -24.1567    XXZ     379.9909    XYZ     -46.5597
+       YYZ     463.4054    XZZ      -9.9957    YZZ     -37.6120
+       ZZZ    1134.5850
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX  -21581.5943   XXXY     273.0810   XXYY   -4589.6193
+      XYYY    -815.9676   YYYY   -2929.8854   XXXZ    2092.8310
+      XXYZ     457.1823   XYYZ    1275.6343   YYYZ    -190.4048
+      XXZZ   -7894.2755   XYZZ     201.7836   YYZZ   -6658.7122
+      XZZZ    1064.0326   YZZZ     -49.8205   ZZZZ  -28207.5352
+ -----------------------------------------------------------------
+ -----------------------------------------------------------------
+               TDA Excited-State Multipoles, State  2
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -0.0000
+    Dipole Moment (Debye)
+         X      -0.4071      Y       0.1422      Z       0.1542
+       Tot       0.4579
+    Quadrupole Moments (Debye-Ang)
+        XX    -262.1262     XY      22.5661     YY    -321.1449
+        XZ      -6.4077     YZ      11.9980     ZZ    -254.1109
+    Octopole Moments (Debye-Ang^2)
+       XXX     -42.8063    XXY      13.8734    XYY     -28.0204
+       YYY     -23.9407    XXZ     391.3728    XYZ     -46.8344
+       YYZ     463.2178    XZZ     -17.3093    YZZ     -36.4883
+       ZZZ    1099.9213
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX  -21458.7293   XXXY     272.7118   XXYY   -4581.5692
+      XYYY    -815.9626   YYYY   -2924.5459   XXXZ    2024.7760
+      XXYZ     457.2465   XYYZ    1274.7058   YYYZ    -190.4724
+      XXZZ   -7812.0817   XYZZ     204.0177   YYZZ   -6649.2234
+      XZZZ     928.7063   YZZZ     -60.3847   ZZZZ  -27643.6866
+ -----------------------------------------------------------------
+ -----------------------------------------------------------------
+               TDA Excited-State Multipoles, State  3
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -0.0000
+    Dipole Moment (Debye)
+         X       0.1860      Y       0.1311      Z      -0.5904
+       Tot       0.6327
+    Quadrupole Moments (Debye-Ang)
+        XX    -261.7191     XY      22.7295     YY    -320.8416
+        XZ      -5.4674     YZ      12.0186     ZZ    -254.0690
+    Octopole Moments (Debye-Ang^2)
+       XXX     -25.3905    XXY      13.7743    XYY     -27.9170
+       YYY     -24.1559    XXZ     367.4015    XYZ     -47.5069
+       YYZ     461.8931    XZZ      -2.5154    YZZ     -36.6701
+       ZZZ    1090.0824
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX  -21435.6948   XXXY     278.2787   XXYY   -4577.4377
+      XYYY    -815.0083   YYYY   -2920.8492   XXXZ    2039.5166
+      XXYZ     456.5174   XYYZ    1277.4765   YYYZ    -190.0209
+      XXZZ   -7752.7120   XYZZ     208.9550   YYZZ   -6646.0923
+      XZZZ     904.8733   YZZZ     -59.1850   ZZZZ  -27687.8181
+ -----------------------------------------------------------------
+ -----------------------------------------------------------------
+               TDA Excited-State Multipoles, State  4
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -0.0000
+    Dipole Moment (Debye)
+         X      -7.2522      Y      -0.6706      Z      -4.3765
+       Tot       8.4970
+    Quadrupole Moments (Debye-Ang)
+        XX    -232.6544     XY      25.6189     YY    -317.0409
+        XZ      58.2465     YZ      16.0732     ZZ    -274.0840
+    Octopole Moments (Debye-Ang^2)
+       XXX    -233.5801    XXY      -5.3667    XYY     -48.0251
+       YYY     -31.0256    XXZ     223.5533    XYZ     -59.0352
+       YYZ     446.2440    XZZ    -259.5366    YZZ     -60.8046
+       ZZZ    1168.5517
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX  -20286.5615   XXXY     404.6240   XXYY   -4495.6244
+      XYYY    -794.3630   YYYY   -2865.7421   XXXZ    3829.8097
+      XXYZ     576.2040   XYYZ    1385.1417   YYYZ    -166.2928
+      XXZZ   -7452.5199   XYZZ     274.1506   YYZZ   -6617.6367
+      XZZZ    2947.5006   YZZZ      94.5242   ZZZZ  -29867.9891
+ -----------------------------------------------------------------
+ -----------------------------------------------------------------
+               TDA Excited-State Multipoles, State  5
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -0.0000
+    Dipole Moment (Debye)
+         X     -10.3687      Y      -0.9302      Z      -6.1144
+       Tot      12.0732
+    Quadrupole Moments (Debye-Ang)
+        XX    -226.4390     XY      26.3758     YY    -316.3019
+        XZ      72.3917     YZ      17.0651     ZZ    -272.8465
+    Octopole Moments (Debye-Ang^2)
+       XXX    -321.3547    XXY     -12.2411    XYY     -56.7844
+       YYY     -33.6662    XXZ     159.6938    XYZ     -63.6933
+       YYZ     440.2549    XZZ    -325.1588    YZZ     -67.0787
+       ZZZ    1163.5712
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX  -20052.5896   XXXY     435.3540   XXYY   -4478.5120
+      XYYY    -789.5107   YYYY   -2855.8457   XXXZ    4224.2456
+      XXYZ     606.9027   XYYZ    1412.3739   YYYZ    -160.3473
+      XXZZ   -7258.4796   XYZZ     297.7396   YYZZ   -6601.3414
+      XZZZ    3371.5166   YZZZ     131.5230   ZZZZ  -30103.0515
+ -----------------------------------------------------------------
+ -----------------------------------------------------------------
+               TDA Excited-State Multipoles, State  6
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -0.0000
+    Dipole Moment (Debye)
+         X      -1.6436      Y      -0.0427      Z      -1.0551
+       Tot       1.9536
+    Quadrupole Moments (Debye-Ang)
+        XX    -262.3237     XY      23.1340     YY    -320.0806
+        XZ      10.3947     YZ      12.9640     ZZ    -267.7088
+    Octopole Moments (Debye-Ang^2)
+       XXX     -78.1872    XXY       9.2425    XYY     -32.1777
+       YYY     -25.5190    XXZ     358.7398    XYZ     -48.6285
+       YYZ     459.1280    XZZ     -72.1719    YZZ     -43.1218
+       ZZZ    1153.2131
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX  -21427.5365   XXXY     296.1349   XXYY   -4567.4193
+      XYYY    -811.2911   YYYY   -2910.0861   XXXZ    2514.6377
+      XXYZ     483.2663   XYYZ    1302.9006   YYYZ    -184.9014
+      XXZZ   -7899.6440   XYZZ     213.4769   YYZZ   -6651.1087
+      XZZZ    1555.6792   YZZZ     -15.2425   ZZZZ  -28787.3648
+ -----------------------------------------------------------------
+ -----------------------------------------------------------------
+               TDA Excited-State Multipoles, State  7
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -0.0000
+    Dipole Moment (Debye)
+         X       8.7193      Y       0.2696      Z       4.7491
+       Tot       9.9325
+    Quadrupole Moments (Debye-Ang)
+        XX    -222.0698     XY      24.7379     YY    -316.3270
+        XZ      44.8501     YZ      14.3336     ZZ    -306.5380
+    Octopole Moments (Debye-Ang^2)
+       XXX     236.3971    XXY      22.0331    XYY      -4.6889
+       YYY     -18.8068    XXZ     476.1608    XYZ     -41.2930
+       YYZ     470.4514    XZZ    -107.1954    YZZ     -46.7304
+       ZZZ    1335.7596
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX  -19771.7714   XXXY     400.0836   XXYY   -4479.6449
+      XYYY    -800.6308   YYYY   -2855.7961   XXXZ    3478.9781
+      XXYZ     526.1790   XYYZ    1336.1160   YYYZ    -179.7084
+      XXZZ   -8216.9231   XYZZ     207.3217   YYZZ   -6689.2575
+      XZZZ    2496.4699   YZZZ      33.8949   ZZZZ  -30877.8318
+ -----------------------------------------------------------------
+ -----------------------------------------------------------------
+               TDA Excited-State Multipoles, State  8
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -0.0000
+    Dipole Moment (Debye)
+         X      10.2270      Y       0.3547      Z       5.6597
+       Tot      11.6940
+    Quadrupole Moments (Debye-Ang)
+        XX    -220.9901     XY      24.6377     YY    -316.2547
+        XZ      43.8555     YZ      14.1796     ZZ    -309.9632
+    Octopole Moments (Debye-Ang^2)
+       XXX     281.5388    XXY      24.5957    XYY      -0.5352
+       YYY     -17.6739    XXZ     501.6324    XYZ     -39.5592
+       YYZ     472.7980    XZZ     -93.8298    YZZ     -45.4755
+       ZZZ    1354.1039
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX  -19718.1926   XXXY     399.7393   XXYY   -4477.8699
+      XYYY    -801.2892   YYYY   -2854.9108   XXXZ    3454.2293
+      XXYZ     521.8194   XYYZ    1331.8220   YYYZ    -180.9837
+      XXZZ   -8296.2023   XYZZ     200.7036   YYZZ   -6696.4295
+      XZZZ    2464.7848   YZZZ      28.8401   ZZZZ  -30997.6086
+ -----------------------------------------------------------------
+ -----------------------------------------------------------------
+               TDA Excited-State Multipoles, State  9
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -0.0000
+    Dipole Moment (Debye)
+         X       0.1475      Y       0.1643      Z      -0.2658
+       Tot       0.3456
+    Quadrupole Moments (Debye-Ang)
+        XX    -265.4735     XY      22.5189     YY    -322.5343
+        XZ     -11.3381     YZ      11.7275     ZZ    -251.6380
+    Octopole Moments (Debye-Ang^2)
+       XXX     -25.2818    XXY      13.9443    XYY     -27.8377
+       YYY     -23.9872    XXZ     377.9646    XYZ     -46.9513
+       YYZ     464.5374    XZZ      10.8974    YZZ     -35.5071
+       ZZZ    1090.5007
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX  -21554.0238   XXXY     269.8172   XXYY   -4598.8412
+      XYYY    -817.6441   YYYY   -2941.2236   XXXZ    1948.4180
+      XXYZ     451.9335   XYYZ    1265.8412   YYYZ    -192.3324
+      XXZZ   -7804.6187   XYZZ     203.6784   YYZZ   -6658.3465
+      XZZZ     836.4803   YZZZ     -65.5802   ZZZZ  -27669.7018
+ -----------------------------------------------------------------
+ -----------------------------------------------------------------
+               TDA Excited-State Multipoles, State 10
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -0.0000
+    Dipole Moment (Debye)
+         X       0.0557      Y       0.2092      Z      -0.4991
+       Tot       0.5440
+    Quadrupole Moments (Debye-Ang)
+        XX    -259.5452     XY      22.5609     YY    -322.5425
+        XZ     -17.3457     YZ      11.4263     ZZ    -237.8235
+    Octopole Moments (Debye-Ang^2)
+       XXX     -31.5288    XXY      14.9485    XYY     -27.6618
+       YYY     -23.7039    XXZ     375.5808    XYZ     -47.8795
+       YYZ     464.3680    XZZ      29.5367    YZZ     -32.3774
+       ZZZ    1007.0685
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX  -21383.2456   XXXY     269.8026   XXYY   -4596.0107
+      XYYY    -818.1100   YYYY   -2942.1817   XXXZ    1746.2294
+      XXYZ     446.5024   XYYZ    1259.0464   YYYZ    -193.5516
+      XXZZ   -7604.1079   XYZZ     210.3589   YYZZ   -6646.9138
+      XZZZ     462.7276   YZZZ     -92.1031   ZZZZ  -26546.7762
+ -----------------------------------------------------------------
+ -----------------------------------------------------------------
+               TDA Excited-State Multipoles, State 11
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -0.0000
+    Dipole Moment (Debye)
+         X       0.0188      Y       0.1787      Z      -0.2284
+       Tot       0.2906
+    Quadrupole Moments (Debye-Ang)
+        XX    -258.3913     XY      22.6642     YY    -322.0301
+        XZ     -15.5870     YZ      11.6102     ZZ    -239.3768
+    Octopole Moments (Debye-Ang^2)
+       XXX     -25.8865    XXY      14.6288    XYY     -28.2871
+       YYY     -23.9596    XXZ     363.3901    XYZ     -48.4536
+       YYZ     463.5392    XZZ      23.1489    YZZ     -33.5757
+       ZZZ    1040.2759
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX  -21330.3024   XXXY     274.9082   XXYY   -4588.9969
+      XYYY    -817.4795   YYYY   -2936.0606   XXXZ    1775.4554
+      XXYZ     448.2091   XYYZ    1264.3529   YYYZ    -192.6391
+      XXZZ   -7557.5873   XYZZ     213.4948   YYZZ   -6643.9907
+      XZZZ     501.3224   YZZZ     -82.5290   ZZZZ  -26742.8900
+ -----------------------------------------------------------------
+ -----------------------------------------------------------------
+               TDA Excited-State Multipoles, State 12
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -0.0000
+    Dipole Moment (Debye)
+         X     -14.1272      Y      -0.6485      Z      -8.1150
+       Tot      16.3049
+    Quadrupole Moments (Debye-Ang)
+        XX    -236.6753     XY      23.7755     YY    -311.2274
+        XZ      76.8655     YZ      15.6055     ZZ    -276.0057
+    Octopole Moments (Debye-Ang^2)
+       XXX    -345.0828    XXY      -2.2396    XYY     -81.9056
+       YYY     -36.0290    XXZ     163.3459    XYZ     -54.9635
+       YYZ     419.2553    XZZ    -335.6429    YZZ     -62.9684
+       ZZZ    1191.3206
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX  -20838.2538   XXXY     331.1196   XXYY   -4440.1614
+      XYYY    -795.7920   YYYY   -2817.6365   XXXZ    3931.4724
+      XXYZ     544.1028   XYYZ    1470.3550   YYYZ    -163.8000
+      XXZZ   -7551.8398   XYZZ     250.2706   YYZZ   -6541.4994
+      XZZZ    3383.8761   YZZZ     111.2665   ZZZZ  -30588.8212
+ -----------------------------------------------------------------
+Archival summary:
+1\1\ctcp041\SP\ProcedureUnspecified\BasisUnspecified\252242\mewes1\SatOct2700:18:212018SatOct2700:18:212018\0\\#,ProcedureUnspecified,BasisUnspecified,\\0,1\C\C,1,1.3954\H,2,1.08473,1,119.891\C,2,1.38191,1,119.968,3,179.863,0\C,4,1.41254,2,120.766,1,0.155925,0\C,5,1.38533,4,119.646,2,0.509703,0\H,6,1.08457,5,120.12,4,179.135,0\C,6,1.40071,5,120.106,4,-0.719396,0\C,4,1.45857,2,130.591,1,-179.575,0\C,9,1.37078,4,134.813,2,-0.267951,0\H,10,1.08329,9,121.946,4,-0.202032,0\C,9,1.40559,4,106.114,2,179.607,0\C,12,1.39015,9,123.802,4,-179.792,0\C,12,1.40868,9,111.32,4,0.117838,0\C,14,1.36966,12,118.101,9,-179.911,0\H,15,1.08278,14,121.924,12,179.962,0\C,10,1.41464,9,118.361,4,179.788,0\H,17,1.08236,10,118.583,9,-179.981,0\C,17,1.37644,10,122.277,9,0.007556,0\H,19,1.08316,17,119.774,10,-179.97,0\C,13,1.41542,12,115.836,9,179.904,0\H,21,1.08307,13,120.107,12,-179.981,0\C,21,1.37624,13,119.949,12,-0.009938,0\H,23,1.08207,21,118.932,13,-179.958,0\B,1,1.55577,2,119.661,3,-0.790662,0\C,25,1.55522,1,119.184,2,-179.082,0\C,26,1.39455,25,119.623,1,179.003,0\H,27,1.08438,26,120.081,25,0.442073,0\C,27,1.38064,26,119.818,25,-179.397,0\C,29,1.41265,27,120.925,26,0.006427,0\C,30,1.38531,29,119.599,27,-0.410872,0\H,31,1.08429,30,120.333,29,-179.689,0\C,31,1.40053,30,120.009,29,0.291947,0\C,29,1.45932,27,130.37,26,179.845,0\C,34,1.37128,29,134.939,27,0.204162,0\H,35,1.08323,34,121.935,29,0.081835,0\C,34,1.40527,29,106.074,27,-179.752,0\C,37,1.39162,34,123.745,29,179.887,0\C,37,1.40864,34,111.421,29,-0.036937,0\C,39,1.37051,37,117.951,34,179.874,0\H,40,1.08272,39,121.923,37,-179.906,0\C,38,1.41496,37,115.979,34,-179.906,0\H,42,1.08324,38,120.114,37,179.972,0\C,42,1.376,38,119.855,37,0.014646,0\H,44,1.08214,42,118.948,38,179.961,0\C,35,1.41514,34,118.476,29,-179.918,0\H,46,1.08242,35,118.585,34,-179.978,0\C,46,1.37604,35,122.263,34,0.026079,0\H,48,1.0833,46,119.875,35,179.994,0\B,33,1.55678,31,120.267,30,-179.821,0\C,50,1.56706,33,119.896,31,1.78158,0\C,51,1.39411,50,121.564,33,83.7348,0\C,52,1.39594,51,120.574,50,179.285,0\H,53,1.0831,52,118.544,51,-179.885,0\C,53,1.38787,52,120.128,51,0.454033,0\O,55,1.34943,53,124.52,52,179.989,0\C,55,1.39493,53,119.491,52,0.415007,0\H,57,1.08418,55,119.073,53,179.036,0\C,57,1.38365,55,120.69,53,-0.718108,0\C,56,1.40791,55,118.408,53,1.18473,0\H,60,1.08775,56,106.619,55,178.829,0\H,60,1.09413,56,112.126,55,60.056,0\H,60,1.09421,56,112.182,55,-62.4273,0\C,59,1.50445,57,120.04,55,179.611,0\H,64,1.08953,59,111.811,57,-3.98124,0\H,64,1.09214,59,111.498,57,116.416,0\H,64,1.09269,59,111.419,57,-124.301,0\C,52,1.50769,51,120.669,50,1.25656,0\H,68,1.09295,52,109.523,51,-149.399,0\H,68,1.09387,52,110.229,51,-33.451,0\C,68,1.52774,52,112.687,51,88.872,0\H,71,1.0902,68,111.396,52,-61.9602,0\H,71,1.09067,68,111.132,52,58.1561,0\H,71,1.0907,68,110.871,52,178.204,0\C,25,1.57328,1,120.903,2,1.38327,0\C,75,1.39372,25,121.365,1,-95.3381,0\C,76,1.39654,75,120.774,25,-178.72,0\H,77,1.0836,76,118.535,75,179.825,0\C,77,1.38611,76,120.257,75,0.138775,0\O,79,1.34962,77,124.543,76,179.922,0\C,79,1.3952,77,119.329,76,0.134511,0\H,81,1.08406,79,119.061,77,179.46,0\C,81,1.38352,79,120.674,77,-0.249874,0\C,80,1.40855,79,118.445,77,0.899301,0\H,84,1.0878,80,106.609,79,178.955,0\H,84,1.09405,80,112.156,79,60.188,0\H,84,1.09412,80,112.196,79,-62.3349,0\C,83,1.50269,81,119.809,79,179.396,0\H,88,1.08945,83,111.816,81,0.085358,0\H,88,1.09208,83,111.417,81,120.518,0\H,88,1.09267,83,111.284,81,-120.145,0\C,76,1.50789,75,121.227,25,3.25804,0\H,92,1.09342,76,109.571,75,-138.54,0\H,92,1.0936,76,110.442,75,-22.4806,0\C,92,1.5269,76,112.325,75,99.8172,0\H,95,1.09037,92,111.125,76,-60.5188,0\H,95,1.09044,92,110.996,76,179.469,0\H,95,1.0908,92,111.167,76,59.431,0\\\@
+
+ Total job time:  10029.76s(wall), 34661.57s(cpu) 
+ Sat Oct 27 00:18:21 2018
+
+        *************************************************************
+        *                                                           *
+        *  Thank you very much for using Q-Chem.  Have a nice day.  *
+        *                                                           *
+        *************************************************************
+
+
+0 sent ACK to 0 
+now end server 0 ... 
