@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=.data.mewes1.CALC.TADF.ANDBA-MeEt-DPTZ.MOM_OPT.ut1opt_dcm.in
+#SBATCH --job-name=.data.mewes1.CALC.tadf.ANDBA-MeEt-DPTZ.MOM_OPT.ut1opt_dcm.in
 #SBATCH -t 0-12:00
 #SBATCH -n 8
 #SBATCH -N 1
@@ -38,15 +38,15 @@ export QCPLATFORM=LINUX_Ix86
 
 # Go into Scratch
 cd $SCRATCH
-cp /data/mewes1/CALC/TADF/ANDBA-MeEt-DPTZ/MOM_OPT/ut1opt_dcm.in /data/mewes1/CALC/TADF/ANDBA-MeEt-DPTZ/MOM_OPT/*.mol .
+cp /data/mewes1/CALC/tadf/ANDBA-MeEt-DPTZ/MOM_OPT/ut1opt_dcm.in /data/mewes1/CALC/tadf/ANDBA-MeEt-DPTZ/MOM_OPT/*.mol .
 
 # Backup old out file is existing 
-[ -e /data/mewes1/CALC/TADF/ANDBA-MeEt-DPTZ/MOM_OPT/ut1opt_dcm.out ] && cp /data/mewes1/CALC/TADF/ANDBA-MeEt-DPTZ/MOM_OPT/ut1opt_dcm.out /data/mewes1/CALC/TADF/ANDBA-MeEt-DPTZ/MOM_OPT/ut1opt_dcm.out_OLD
+[ -e /data/mewes1/CALC/tadf/ANDBA-MeEt-DPTZ/MOM_OPT/ut1opt_dcm.out ] && cp /data/mewes1/CALC/tadf/ANDBA-MeEt-DPTZ/MOM_OPT/ut1opt_dcm.out /data/mewes1/CALC/tadf/ANDBA-MeEt-DPTZ/MOM_OPT/ut1opt_dcm.out_OLD
 
 # Execute the program
 if [ "" = "yes" ] ; then
-$QC/bin/qchem -save ut1opt_dcm.in /data/mewes1/CALC/TADF/ANDBA-MeEt-DPTZ/MOM_OPT/ut1opt_dcm.out ut1opt_dcm.out.plots
+$QC/bin/qchem -save ut1opt_dcm.in /data/mewes1/CALC/tadf/ANDBA-MeEt-DPTZ/MOM_OPT/ut1opt_dcm.out ut1opt_dcm.out.plots
 else
-$QC/bin/qchem ut1opt_dcm.in /data/mewes1/CALC/TADF/ANDBA-MeEt-DPTZ/MOM_OPT/ut1opt_dcm.out
+$QC/bin/qchem ut1opt_dcm.in /data/mewes1/CALC/tadf/ANDBA-MeEt-DPTZ/MOM_OPT/ut1opt_dcm.out
 fi
 
