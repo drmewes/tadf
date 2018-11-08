@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#SBATCH --job-name=.data.mewes1.CALC.tadf.ANDBA-DiEt-NPh3.MOM_OPT.TRANSPROP.s1tp_tda_vac.in
-#SBATCH -t 0-12:00
-#SBATCH -n 8
+#SBATCH --job-name=.data.mewes1.CALC.tadf.ANDBA-DiEt-NPh3.GSOPT+PCM.gsopt_eth.in
+#SBATCH -t 3-0:00
+#SBATCH -n 4
 #SBATCH -N 1
 #SBATCH --mem-per-cpu=2G
 #SBATCH --mail-type=END
@@ -33,20 +33,20 @@ module add q-chem/intel/QCHEM_5.1.0_Trunk
 #export QCAUX=/home/mewes/SOFTWARE/QCHEM_AUX_5.0.2
 export QCSCRATCH=$SCRATCH
 export QCPLATFORM=LINUX_Ix86
-#xport QCTHREADS=8
-#xport OMP_NUM_THREADS=8
+#xport QCTHREADS=4
+#xport OMP_NUM_THREADS=4
 
 # Go into Scratch
 cd $SCRATCH
-cp /data/mewes1/CALC/tadf/ANDBA-DiEt-NPh3/MOM_OPT/TRANSPROP/s1tp_tda_vac.in /data/mewes1/CALC/tadf/ANDBA-DiEt-NPh3/MOM_OPT/TRANSPROP/*.mol .
+cp /data/mewes1/CALC/tadf/ANDBA-DiEt-NPh3/GSOPT+PCM/gsopt_eth.in /data/mewes1/CALC/tadf/ANDBA-DiEt-NPh3/GSOPT+PCM/*.mol .
 
 # Backup old out file is existing 
-[ -e /data/mewes1/CALC/tadf/ANDBA-DiEt-NPh3/MOM_OPT/TRANSPROP/s1tp_tda_vac.out ] && cp /data/mewes1/CALC/tadf/ANDBA-DiEt-NPh3/MOM_OPT/TRANSPROP/s1tp_tda_vac.out /data/mewes1/CALC/tadf/ANDBA-DiEt-NPh3/MOM_OPT/TRANSPROP/s1tp_tda_vac.out_OLD
+[ -e /data/mewes1/CALC/tadf/ANDBA-DiEt-NPh3/GSOPT+PCM/gsopt_eth.out ] && cp /data/mewes1/CALC/tadf/ANDBA-DiEt-NPh3/GSOPT+PCM/gsopt_eth.out /data/mewes1/CALC/tadf/ANDBA-DiEt-NPh3/GSOPT+PCM/gsopt_eth.out_OLD
 
 # Execute the program
 if [ "" = "yes" ] ; then
-$QC/bin/qchem -save s1tp_tda_vac.in /data/mewes1/CALC/tadf/ANDBA-DiEt-NPh3/MOM_OPT/TRANSPROP/s1tp_tda_vac.out s1tp_tda_vac.out.plots
+$QC/bin/qchem -save gsopt_eth.in /data/mewes1/CALC/tadf/ANDBA-DiEt-NPh3/GSOPT+PCM/gsopt_eth.out gsopt_eth.out.plots
 else
-$QC/bin/qchem s1tp_tda_vac.in /data/mewes1/CALC/tadf/ANDBA-DiEt-NPh3/MOM_OPT/TRANSPROP/s1tp_tda_vac.out
+$QC/bin/qchem gsopt_eth.in /data/mewes1/CALC/tadf/ANDBA-DiEt-NPh3/GSOPT+PCM/gsopt_eth.out
 fi
 
