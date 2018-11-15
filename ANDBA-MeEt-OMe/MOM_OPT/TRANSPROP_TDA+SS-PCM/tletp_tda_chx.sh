@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=.data.mewes1.CALC.TADF.ANDBA-MeEt-OMe.MOM_OPT.TRANSPROP_TDA+SS-PCM.tletp_tda_chx.in
+#SBATCH --job-name=.data.mewes1.CALC.tadf.ANDBA-MeEt-OMe.MOM_OPT.TRANSPROP_TDA+SS-PCM.tletp_tda_chx.in
 #SBATCH -t 0-12:00
 #SBATCH -n 8
 #SBATCH -N 1
@@ -38,15 +38,15 @@ export QCPLATFORM=LINUX_Ix86
 
 # Go into Scratch
 cd $SCRATCH
-cp /data/mewes1/CALC/TADF/ANDBA-MeEt-OMe/MOM_OPT/TRANSPROP_TDA+SS-PCM/tletp_tda_chx.in /data/mewes1/CALC/TADF/ANDBA-MeEt-OMe/MOM_OPT/TRANSPROP_TDA+SS-PCM/*.mol .
+cp /data/mewes1/CALC/tadf/ANDBA-MeEt-OMe/MOM_OPT/TRANSPROP_TDA+SS-PCM/tletp_tda_chx.in /data/mewes1/CALC/tadf/ANDBA-MeEt-OMe/MOM_OPT/TRANSPROP_TDA+SS-PCM/*.mol .
 
 # Backup old out file is existing 
-[ -e /data/mewes1/CALC/TADF/ANDBA-MeEt-OMe/MOM_OPT/TRANSPROP_TDA+SS-PCM/tletp_tda_chx.out ] && cp /data/mewes1/CALC/TADF/ANDBA-MeEt-OMe/MOM_OPT/TRANSPROP_TDA+SS-PCM/tletp_tda_chx.out /data/mewes1/CALC/TADF/ANDBA-MeEt-OMe/MOM_OPT/TRANSPROP_TDA+SS-PCM/tletp_tda_chx.out_OLD
+[ -e /data/mewes1/CALC/tadf/ANDBA-MeEt-OMe/MOM_OPT/TRANSPROP_TDA+SS-PCM/tletp_tda_chx.out ] && cp /data/mewes1/CALC/tadf/ANDBA-MeEt-OMe/MOM_OPT/TRANSPROP_TDA+SS-PCM/tletp_tda_chx.out /data/mewes1/CALC/tadf/ANDBA-MeEt-OMe/MOM_OPT/TRANSPROP_TDA+SS-PCM/tletp_tda_chx.out_OLD
 
 # Execute the program
 if [ "" = "yes" ] ; then
-$QC/bin/qchem -save tletp_tda_chx.in /data/mewes1/CALC/TADF/ANDBA-MeEt-OMe/MOM_OPT/TRANSPROP_TDA+SS-PCM/tletp_tda_chx.out tletp_tda_chx.out.plots
+$QC/bin/qchem -save tletp_tda_chx.in /data/mewes1/CALC/tadf/ANDBA-MeEt-OMe/MOM_OPT/TRANSPROP_TDA+SS-PCM/tletp_tda_chx.out tletp_tda_chx.out.plots
 else
-$QC/bin/qchem tletp_tda_chx.in /data/mewes1/CALC/TADF/ANDBA-MeEt-OMe/MOM_OPT/TRANSPROP_TDA+SS-PCM/tletp_tda_chx.out
+$QC/bin/qchem tletp_tda_chx.in /data/mewes1/CALC/tadf/ANDBA-MeEt-OMe/MOM_OPT/TRANSPROP_TDA+SS-PCM/tletp_tda_chx.out
 fi
 

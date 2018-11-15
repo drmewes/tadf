@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=.data.mewes1.CALC.TADF.ANDBA-NPh3.MOM_OPT.TRANSPROP.tletp_tda_eth.in
+#SBATCH --job-name=.data.mewes1.CALC.tadf.ANDBA-NPh3.MOM_OPT.TRANSPROP.tletp_tda_eth.in
 #SBATCH -t 0-12:00
 #SBATCH -n 8
 #SBATCH -N 1
@@ -38,15 +38,15 @@ export QCPLATFORM=LINUX_Ix86
 
 # Go into Scratch
 cd $SCRATCH
-cp /data/mewes1/CALC/TADF/ANDBA-NPh3/MOM_OPT/TRANSPROP/tletp_tda_eth.in /data/mewes1/CALC/TADF/ANDBA-NPh3/MOM_OPT/TRANSPROP/*.mol .
+cp /data/mewes1/CALC/tadf/ANDBA-NPh3/MOM_OPT/TRANSPROP/tletp_tda_eth.in /data/mewes1/CALC/tadf/ANDBA-NPh3/MOM_OPT/TRANSPROP/*.mol .
 
 # Backup old out file is existing 
-[ -e /data/mewes1/CALC/TADF/ANDBA-NPh3/MOM_OPT/TRANSPROP/tletp_tda_eth.out ] && cp /data/mewes1/CALC/TADF/ANDBA-NPh3/MOM_OPT/TRANSPROP/tletp_tda_eth.out /data/mewes1/CALC/TADF/ANDBA-NPh3/MOM_OPT/TRANSPROP/tletp_tda_eth.out_OLD
+[ -e /data/mewes1/CALC/tadf/ANDBA-NPh3/MOM_OPT/TRANSPROP/tletp_tda_eth.out ] && cp /data/mewes1/CALC/tadf/ANDBA-NPh3/MOM_OPT/TRANSPROP/tletp_tda_eth.out /data/mewes1/CALC/tadf/ANDBA-NPh3/MOM_OPT/TRANSPROP/tletp_tda_eth.out_OLD
 
 # Execute the program
 if [ "" = "yes" ] ; then
-$QC/bin/qchem -save tletp_tda_eth.in /data/mewes1/CALC/TADF/ANDBA-NPh3/MOM_OPT/TRANSPROP/tletp_tda_eth.out tletp_tda_eth.out.plots
+$QC/bin/qchem -save tletp_tda_eth.in /data/mewes1/CALC/tadf/ANDBA-NPh3/MOM_OPT/TRANSPROP/tletp_tda_eth.out tletp_tda_eth.out.plots
 else
-$QC/bin/qchem tletp_tda_eth.in /data/mewes1/CALC/TADF/ANDBA-NPh3/MOM_OPT/TRANSPROP/tletp_tda_eth.out
+$QC/bin/qchem tletp_tda_eth.in /data/mewes1/CALC/tadf/ANDBA-NPh3/MOM_OPT/TRANSPROP/tletp_tda_eth.out
 fi
 
