@@ -1,0 +1,27 @@
+$rem
+threads 4
+jobtype opt
+method PBEh-3c
+basis def2-mSVP
+mem_static      1024
+mem_total       4000
+sym_ignore      true
+unrestricted true
+scf_algorithm	diis
+scf_max_cycles	250
+solvent_method  pcm
+geom_opt_tol_energy 25
+geom_opt_tol_gradient 75
+$end
+
+$pcm
+theory  iefpcm
+$end
+
+$solvent
+dielectric      1.0001
+$end
+
+$molecule
+read iDBP_an.mol
+$end
