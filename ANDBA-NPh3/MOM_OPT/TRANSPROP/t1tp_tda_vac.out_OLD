@@ -1,4 +1,10 @@
 mFile = /cm/shared/apps/q-chem/intel/QCHEM_5.1.0_Trunk/bin/mpi/machines
+ 
+*************************************************************
+Job 2 of 2 
+*************************************************************
+ 
+mFile = /cm/shared/apps/q-chem/intel/QCHEM_5.1.0_Trunk/bin/mpi/machines
 Process 0 of 1 is on ctcp036 - thread support 0
 initial socket setup ...start
 initial socket setup ...done 
@@ -73,7 +79,7 @@ Q-Chem Developer Version!
  Parts of Q-Chem use Armadillo 8.300.2 (Tropical Shenanigans).
  http://arma.sourceforge.net/
 
- Q-Chem begins on Wed Nov 14 09:37:25 2018  
+ Q-Chem begins on Wed Nov 14 13:02:55 2018  
 
 Host: ctcp036
 0
@@ -94,39 +100,438 @@ Checking the input file for inconsistencies... 	...done.
 --------------------------------------------------------------
 User input:
 --------------------------------------------------------------
-$solvent
-dielectric      1.0001
-dielectric_infi 1.00009
-$end
-
 $rem
 threads 8
-jobtype	sp
+jobtype sp
 method PBEh-3c
 basis def2-mSVP
-mem_static	1024
-mem_total	14000
-sym_ignore	true
-cis_n_roots             2
-cis_singlets            false
-cis_triplets		true 
+mem_static      1024
+mem_total       14000
+sym_ignore      true
+cis_n_roots             6
+cis_singlets            true
+cis_triplets            true
 rpa                     false
-calc_soc 		true
+calc_soc                true
 cis_moments             true
-cis_relaxed_density	true
-solvent_method		pcm
+cis_relaxed_density     true
+solvent_method          pcm
+$end
+
+$molecule
+read
 $end
 
 $pcm
-StateSpecific   1
-ChargeSeparation Excited
+statespecific           Marcus 
 $end
 
-
-$molecule
-read ut1opt_vac.mol
+$solvent
+dielectric      1.0001 
+dielectric_infi 1.00009
 $end
-
 
 --------------------------------------------------------------
  Adding empirical dispersion correction 
+ ----------------------------------------------------------------
+ Doing -D3(BJ) with
+ s6 =   1.00000
+ s8 =   0.00000
+ a1 =   0.48600
+ a2 =   4.50000
+ -D3 energy including 3body term =     -0.1221040462 hartrees
+ ----------------------------------------------------------------
+ Adding gCP correction 
+ ----------------------------------------------------------------
+ gCP energy =      0.1712242654 hartrees
+ ----------------------------------------------------------------
+             Standard Nuclear Orientation (Angstroms)
+    I     Atom           X                Y                Z
+ ----------------------------------------------------------------
+    1      N       0.0000000000     0.0000000000     0.0000000000
+    2      C       0.0000000000     0.0000000000     1.3629540000
+    3      C       1.2220498371     0.0000000000     2.0739916230
+    4      H       2.1550524174    -0.0668265369     1.5293758443
+    5      C       1.2287536639     0.0332168977     3.4436925067
+    6      C      -1.2203466661     0.0107903248     2.0772292456
+    7      H      -2.1561904682     0.0429882844     1.5339940447
+    8      C      -1.2231216300     0.0591711114     3.4465620156
+    9      C      -1.0987523916    -0.4975382693    -0.7417210190
+   10      C      -1.6053782155     0.2485318002    -1.8016815601
+   11      H      -1.1821833672     1.2164437334    -2.0368556442
+   12      C      -2.6598837315    -0.2520489281    -2.5443518151
+   13      H      -3.0599649566     0.3309835342    -3.3626814486
+   14      C      -3.2069306662    -1.4906018341    -2.2379017218
+   15      H      -4.0303746738    -1.8781970272    -2.8222774100
+   16      C      -2.6934912852    -2.2328078914    -1.1843901060
+   17      H      -3.1085810788    -3.2035778656    -0.9502102119
+   18      C      -1.6359783585    -1.7444461259    -0.4359154188
+   19      H      -1.2202117973    -2.3324796371     0.3720526916
+   20      C       1.0956524009     0.5123343430    -0.7369038914
+   21      C       1.6066561147    -0.2217997414    -1.8029482831
+   22      H       1.1867558018    -1.1887452220    -2.0475476858
+   23      C       2.6601987492     0.2896356097    -2.5392360356
+   24      H       3.0645846410    -0.2847037298    -3.3616583159
+   25      C       3.2009575546     1.5282770103    -2.2215634440
+   26      H       4.0240652415     1.9238413481    -2.8009797382
+   27      C       2.6805694845     2.2606584094    -1.1643484224
+   28      H       3.0896549645     3.2317996365    -0.9216435032
+   29      C       1.6243457764     1.7607734888    -0.4213849001
+   30      H       1.2022941277     2.3407574033     0.3891602317
+   31      C       0.0043348065     0.0913307243     4.1694795253
+   32      C      -2.5130087901     0.1204426424     4.1998527720
+   33      H      -3.3739069732     0.0959990576     3.5326592187
+   34      H      -2.5643924257     1.0292319762     4.8012506367
+   35      H      -2.5886995878    -0.7157653933     4.8965402809
+   36      C       2.5199974536     0.0050927379     4.1970287972
+   37      H       3.3773212123    -0.0652670731     3.5287031470
+   38      H       2.5461276626    -0.8387436880     4.8876296938
+   39      H       2.6261362977     0.9052930139     4.8044984925
+   40      B       0.0013802173     0.2230418619     5.7410561733
+   41      C      -0.0486046947    -1.0288706981     6.6060319624
+   42      C      -0.0765664275    -2.3175194971     6.0305812070
+   43      H      -0.0554797731    -2.4302021229     4.9491564852
+   44      C      -0.1315476490    -3.4326500101     6.8236829831
+   45      C      -0.1581012141    -3.3059450642     8.2434741926
+   46      C      -0.1284760017    -2.0582629767     8.8202649012
+   47      H      -0.1480101149    -1.9562945999     9.8998852964
+   48      C      -0.0739840854    -0.8959256347     8.0268917292
+   49      C      -0.2176662807    -4.6522936177     8.8092259567
+   50      C      -0.2617152363    -5.1817153306    10.0743018550
+   51      H      -0.2587383302    -4.5522746693    10.9550139547
+   52      C      -0.2259917416    -5.5441247230     7.7166691045
+   53      C      -0.2765144623    -6.9309390286     7.8303894174
+   54      C      -0.1743559223    -4.8549616224     6.4892759194
+   55      C      -0.1729540855    -5.5860459702     5.3275899574
+   56      H      -0.1313675603    -5.1127131020     4.3538416302
+   57      C      -0.2249326474    -6.9958007384     5.4132503641
+   58      H      -0.2236447949    -7.5712273846     4.4957492259
+   59      C      -0.2751785343    -7.6602970637     6.6166110934
+   60      H      -0.3134572198    -8.7428669837     6.6339364739
+   61      C      -0.3132261673    -6.5874310551    10.2210775389
+   62      H      -0.3480054531    -7.0002511883    11.2211342397
+   63      C      -0.3210312246    -7.4471410187     9.1477114943
+   64      H      -0.3605951545    -8.5174997789     9.3096010092
+   65      C       0.0263159993     1.6137724593     6.3666631111
+   66      C       0.0649292411     2.7726834257     5.5637437663
+   67      H       0.0810727114     2.6793252183     4.4807149714
+   68      C       0.0799640357     4.0171311585     6.1345802952
+   69      C       0.0594539312     4.1623124305     7.5522039647
+   70      C       0.0185297525     3.0419556721     8.3510077136
+   71      H      -0.0018588093     3.1408253618     9.4314338094
+   72      C       0.0006194257     1.7505434863     7.7880246736
+   73      C       0.1123706939     5.3457116749     5.5349337694
+   74      C       0.1350867380     5.8312590061     4.2519580458
+   75      H       0.1313639885     5.1721395716     3.3918143357
+   76      C       0.1152689169     6.2601932293     6.6060888706
+   77      C       0.1422443938     7.6419075242     6.4472218974
+   78      C       0.0847073744     5.5936639733     7.8495449146
+   79      C       0.0837024123     6.3578989789     8.9885472936
+   80      H       0.0606294489     5.9098180085     9.9737734294
+   81      C       0.1621262358     7.2306887675     4.0615184463
+   82      H       0.1791398150     7.6171948842     3.0500494116
+   83      C       0.1664174309     8.1177786403     5.1134008844
+   84      H       0.1870028445     9.1831915606     4.9189667774
+   85      C       0.1134354439     7.7662601652     8.8600008877
+   86      H       0.1135261309     8.3644071610     9.7621846190
+   87      C       0.1410957307     8.4032119627     7.6410195601
+   88      H       0.1624317728     9.4850868791     7.5954592196
+   89      B      -0.0475525189     0.4982591531     8.6814346627
+   90      C      -0.0713651191     0.6114985200    10.2570170935
+   91      C      -1.2869156636     0.6332010806    10.9511619449
+   92      C      -1.3025009720     0.6661093094    12.3396575845
+   93      H      -2.2493331086     0.6630902635    12.8674208937
+   94      C      -0.1159064693     0.7055633423    13.0589165320
+   95      C       1.0938499739     0.7067831935    12.3765815183
+   96      H       2.0216642294     0.7423189835    12.9358163780
+   97      C       1.1222030983     0.6461831857    10.9892608567
+   98      N      -0.1389012955     0.7355292836    14.4718187324
+   99      C       0.6209941493    -0.1946037600    15.1907386687
+  100      C       1.1941870265     0.1456940093    16.4170721582
+  101      H       1.0506762422     1.1407159673    16.8177498088
+  102      C       1.9472865614    -0.7810418277    17.1173215269
+  103      H       2.3833998949    -0.4981233076    18.0667513433
+  104      C       2.1642843049    -2.0519807833    16.6049258717
+  105      H       2.7622811022    -2.7694316173    17.1505706319
+  106      C       1.6061004610    -2.3879413439    15.3803094475
+  107      H       1.7620295117    -3.3756734593    14.9655480233
+  108      C       0.8339194727    -1.4766946108    14.6812464668
+  109      H       0.3961105803    -1.7555701982    13.7317542472
+  110      C      -1.0247146506     1.6103941010    15.1151010621
+  111      C      -1.7645112924     1.2044604083    16.2257077330
+  112      H      -1.6469841518     0.1999675517    16.6108857709
+  113      C      -2.6562884690     2.0765035344    16.8281341156
+  114      H      -3.2248768929     1.7414653365    17.6861324299
+  115      C      -2.8425632549     3.3566556229    16.3281634576
+  116      H      -3.5486217646     4.0304896977    16.7945853079
+  117      C      -2.1140066157     3.7594703835    15.2179714289
+  118      H      -2.2458753890     4.7552913243    14.8146009591
+  119      C      -1.2067353674     2.9025993278    14.6203823862
+  120      H      -0.6426150740     3.2262413484    13.7552214216
+  121      C       2.4382905588     0.6213680177    10.2633515507
+  122      H       3.2821601412     0.6651925515    10.9517476173
+  123      H       2.5252403920     1.4608167930     9.5708022103
+  124      H       2.5407362563    -0.2882919321     9.6674036773
+  125      C      -2.5828555033     0.5919110816    10.1892905556
+  126      H      -3.4439759457     0.6473063585    10.8550362909
+  127      H      -2.6528119165     1.4216019520     9.4831372388
+  128      H      -2.6709145423    -0.3261308160     9.6043723783
+ ----------------------------------------------------------------
+ Nuclear Repulsion Energy = 10765.6384835428 hartrees
+ There are      254 alpha and      254 beta electrons
+ Requested basis set is def2-mSVP
+ There are 636 shells and 1244 basis functions
+
+ Total QAlloc Memory Limit  14000 MB
+ Mega-Array Size      1001 MB
+ MEM_STATIC part      1024 MB
+ Discretize the solute cavity surface with Lebedev spheres
+	Using 302 Lebedev grid points for each H atom
+	Using 302 Lebedev grid points for other atoms
+	Atomic van der Waals radii will be scaled by 1.20
+ Remove points where switching function is < 1.0e-08
+ Keep 13523 surface tesserae and discard 25133 interior tesserae
+ Molecular Surface Area = 1018.378 Angst**2
+ A cutoff of  1.0D-11 yielded  54279 shell pairs
+ There are    214799 function pairs (    236734 Cartesian)
+ 
+ -------------------------------------------------------
+ OpenMP Integral Computing Module                       
+ Release: version 1.0, May 2013, Q-Chem Inc. Pittsburgh 
+ -------------------------------------------------------
+ Integral Job Info:
+ Integral job number is                      11
+ Integral operator is                         1
+ short-range coefficients                     0
+ long-range coefficients              100000000
+ Omega coefficients                           0
+ if combine SR and LR in K                    0
+ Integral screening is                        0
+ Integral computing path is                   2
+ max size of driver memory is            800000
+ size of driver memory is                593474
+ size of scratch memory is              1809772
+ max col of scratch BK array               1296
+ max len of scratch array in speh3          155
+ max len of scratch index in speh4           18
+ max int batch size is                      520
+ min int batch size is                       52
+ fixed nKL is                                52
+ max L of basis functions is                  2
+ order of int derivative is                   0
+ number of shells is                        636
+ number of basis is                        1320
+ number of cartesian basis is              1320
+ number of contracted shell pairs         54279
+ number of primitive shell pairs         113533
+ maxK2 (contraction) of shell pair           25
+ max number of K2 of shell pair               1
+ max number of CS2 of shell pair          13095
+ max number of PS2 of shell pair          20060
+ mem total for path MDJ                 1056348
+ -------------------------------------------------------
+ Smallest overlap matrix eigenvalue = 1.98E-04
+
+ Scale SEOQF with 1.000000e-01/1.000000e-02/1.000000e-03
+
+ Standard Electronic Orientation quadrupole field applied
+ Nucleus-field energy     =     0.0000000439 hartrees
+ Guess from superposition of atomic densities
+ Warning:  Energy on first SCF cycle will be non-variational
+ SAD guess density has 508.000001 electrons
+
+ -----------------------------------------------------------------------
+  General SCF calculation program by
+  Eric Jon Sundstrom, Paul Horn, Yuezhi Mao, Dmitri Zuev, Alec White,
+  David Stuck, Shaama M.S., Shane Yost, Joonho Lee, David Small,
+  Daniel Levine, Susi Lehtola, Hugh Burton, Evgeny Epifanovsky
+ -----------------------------------------------------------------------
+ Exchange:     0.4200 Hartree-Fock + 0.5800 PBEh-3c
+ Correlation:  1.0000 PBEh-3c
+ Using SG-1 standard quadrature grid
+ Dispersion:   Grimme D3
+ using 8 threads for integral computing
+ -------------------------------------------------------
+ OpenMP Integral computing Module                
+ Release: version 2.0, May 2017, Q-Chem Inc. Pleasanton 
+ -------------------------------------------------------
+ -------------------------------------------------------
+ OpenMP BLAS3 based DFT computing Module                
+ Release: version 1.0, May 2013, Q-Chem Inc. Pittsburgh 
+ -------------------------------------------------------
+ A restricted SCF calculation will be
+ performed using DIIS
+ SCF converges when DIIS error is below 1.0e-08
+ ---------------------------------------
+  Cycle       Energy         DIIS error
+ ---------------------------------------
+    1   -2953.3430228916      2.43e-02  
+    2               -nan          -nan  
+solve(c,A,vect) failed Check on this
+The B Matrix
+           0.  -1.0000e+00  -1.0000e+00  -1.0000e+00
+  -1.0000e+00   9.1554e+02          nan          nan
+  -1.0000e+00          nan          nan          nan
+  -1.0000e+00          nan          nan          nan
+    3               -nan     1.80e+308  
+    4               -nan           nan  
+    5               -nan           nan  
+solve(c,A,vect) failed Check on this
+The B Matrix
+       0.  -1.0000  -1.0000  -1.0000
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+    6               -nan     1.80e+308  
+    7               -nan           nan  
+    8               -nan           nan  
+solve(c,A,vect) failed Check on this
+The B Matrix
+       0.  -1.0000  -1.0000  -1.0000
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+    9               -nan     1.80e+308  
+   10               -nan           nan  
+   11               -nan           nan  
+solve(c,A,vect) failed Check on this
+The B Matrix
+       0.  -1.0000  -1.0000  -1.0000
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+   12               -nan     1.80e+308  
+   13               -nan           nan  
+   14               -nan           nan  
+solve(c,A,vect) failed Check on this
+The B Matrix
+       0.  -1.0000  -1.0000  -1.0000
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+   15               -nan     1.80e+308  
+   16               -nan           nan  
+   17               -nan           nan  
+solve(c,A,vect) failed Check on this
+The B Matrix
+       0.  -1.0000  -1.0000  -1.0000
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+   18               -nan     1.80e+308  
+   19               -nan           nan  
+   20               -nan           nan  
+solve(c,A,vect) failed Check on this
+The B Matrix
+       0.  -1.0000  -1.0000  -1.0000
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+   21               -nan     1.80e+308  
+   22               -nan           nan  
+   23               -nan           nan  
+solve(c,A,vect) failed Check on this
+The B Matrix
+       0.  -1.0000  -1.0000  -1.0000
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+   24               -nan     1.80e+308  
+   25               -nan           nan  
+   26               -nan           nan  
+solve(c,A,vect) failed Check on this
+The B Matrix
+       0.  -1.0000  -1.0000  -1.0000
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+   27               -nan     1.80e+308  
+   28               -nan           nan  
+   29               -nan           nan  
+solve(c,A,vect) failed Check on this
+The B Matrix
+       0.  -1.0000  -1.0000  -1.0000
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+   30               -nan     1.80e+308  
+   31               -nan           nan  
+   32               -nan           nan  
+solve(c,A,vect) failed Check on this
+The B Matrix
+       0.  -1.0000  -1.0000  -1.0000
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+   33               -nan     1.80e+308  
+   34               -nan           nan  
+   35               -nan           nan  
+solve(c,A,vect) failed Check on this
+The B Matrix
+       0.  -1.0000  -1.0000  -1.0000
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+   36               -nan     1.80e+308  
+   37               -nan           nan  
+   38               -nan           nan  
+solve(c,A,vect) failed Check on this
+The B Matrix
+       0.  -1.0000  -1.0000  -1.0000
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+   39               -nan     1.80e+308  
+   40               -nan           nan  
+   41               -nan           nan  
+solve(c,A,vect) failed Check on this
+The B Matrix
+       0.  -1.0000  -1.0000  -1.0000
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+   42               -nan     1.80e+308  
+   43               -nan           nan  
+   44               -nan           nan  
+solve(c,A,vect) failed Check on this
+The B Matrix
+       0.  -1.0000  -1.0000  -1.0000
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+   45               -nan     1.80e+308  
+   46               -nan           nan  
+   47               -nan           nan  
+solve(c,A,vect) failed Check on this
+The B Matrix
+       0.  -1.0000  -1.0000  -1.0000
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+  -1.0000      nan      nan      nan
+   48               -nan     1.80e+308  
+   49               -nan           nan  
+   50               -nan           nan  
+gen_scfman_exception: eig_sym(): decomposition failed
+
+ Q-Chem fatal error occurred in module libgscf/gen_scfman/gen_scfman_main.C, line 144:
+
+ Error in gen_scfman
+
+
+ Please submit a crash report at q-chem.com/reporter 
+ 
+ 
+[ctcp036:11319] *** Process received signal ***
+[ctcp036:11319] Signal: Aborted (6)
+[ctcp036:11319] Signal code:  (-6)
+[ctcp036:11319] [ 0] /lib64/libpthread.so.0(+0xf100)[0x2aaaaaee2100]
+[ctcp036:11319] [ 1] /lib64/libc.so.6(gsignal+0x37)[0x2aaaac37e5f7]
+[ctcp036:11319] [ 2] /lib64/libc.so.6(abort+0x148)[0x2aaaac37fce8]
+[ctcp036:11319] [ 3] /cm/shared/apps/q-chem/intel/QCHEM_5.1.0_Trunk/exe/qcprog.exe[0x10a2c76b]
+[ctcp036:11319] [ 4] /cm/shared/apps/q-chem/intel/QCHEM_5.1.0_Trunk/exe/qcprog.exe[0xab5521]
+[ctcp036:11319] [ 5] /cm/shared/apps/q-chem/intel/QCHEM_5.1.0_Trunk/exe/qcprog.exe[0x43fe3d]
+[ctcp036:11319] [ 6] /cm/shared/apps/q-chem/intel/QCHEM_5.1.0_Trunk/exe/qcprog.exe[0x43d36e]
+[ctcp036:11319] [ 7] /cm/shared/apps/q-chem/intel/QCHEM_5.1.0_Trunk/exe/qcprog.exe[0x43c2b0]
+[ctcp036:11319] [ 8] /lib64/libc.so.6(__libc_start_main+0xf5)[0x2aaaac36ab15]
+[ctcp036:11319] [ 9] /cm/shared/apps/q-chem/intel/QCHEM_5.1.0_Trunk/exe/qcprog.exe[0x416029]
+[ctcp036:11319] *** End of error message ***
