@@ -1,14 +1,14 @@
 #!/bin/bash
 
-#SBATCH --job-name=dCALC.TADF.ANDBA-DiEt-ACR.GSOPT+PCM.gsopt_chx.in
+#SBATCH --job-name=dCALC.tadf.ANDBA-DiEt-ACR.GSOPT+PCM.gsopt_chx.in
 #SBATCH -t 3-0:00
 #SBATCH -n 4
 #SBATCH -N 1
-#SBATCH --mem-per-cpu=2G
+#SBATCH --mem-per-cpu=1G
 #SBATCH --mail-type=END
 #SBATCH --mail-type=FAIL
-#SBATCH -o /home/mewes/err/qchem-%j
-#SBATCH --mail-user=janmewes@janmewes.de
+#SBATCH -o /home/mewes1/err/qchem-%j
+#SBATCH --mail-user=stefaniemewes@janmewes.de
 #SBATCH -p short
 
 echo "This job was submitted from the computer:"
@@ -38,15 +38,15 @@ export QCPLATFORM=LINUX_Ix86
 
 # Go into Scratch
 cd $SCRATCH
-cp /data/mewes/CALC/TADF/ANDBA-DiEt-ACR/GSOPT+PCM/gsopt_chx.in /data/mewes/CALC/TADF/ANDBA-DiEt-ACR/GSOPT+PCM/*.mol .
+cp /data/mewes1/CALC/tadf/ANDBA-DiEt-ACR/GSOPT+PCM/gsopt_chx.in /data/mewes1/CALC/tadf/ANDBA-DiEt-ACR/GSOPT+PCM/*.mol .
 
 # Backup old out file is existing 
-[ -e /data/mewes/CALC/TADF/ANDBA-DiEt-ACR/GSOPT+PCM/gsopt_chx.out ] && cp /data/mewes/CALC/TADF/ANDBA-DiEt-ACR/GSOPT+PCM/gsopt_chx.out /data/mewes/CALC/TADF/ANDBA-DiEt-ACR/GSOPT+PCM/gsopt_chx.out_OLD
+[ -e /data/mewes1/CALC/tadf/ANDBA-DiEt-ACR/GSOPT+PCM/gsopt_chx.out ] && cp /data/mewes1/CALC/tadf/ANDBA-DiEt-ACR/GSOPT+PCM/gsopt_chx.out /data/mewes1/CALC/tadf/ANDBA-DiEt-ACR/GSOPT+PCM/gsopt_chx.out_OLD
 
 # Execute the program
 if [ "" = "yes" ] ; then
-$QC/bin/qchem -save gsopt_chx.in /data/mewes/CALC/TADF/ANDBA-DiEt-ACR/GSOPT+PCM/gsopt_chx.out gsopt_chx.out.plots
+$QC/bin/qchem -save gsopt_chx.in /data/mewes1/CALC/tadf/ANDBA-DiEt-ACR/GSOPT+PCM/gsopt_chx.out gsopt_chx.out.plots
 else
-$QC/bin/qchem gsopt_chx.in /data/mewes/CALC/TADF/ANDBA-DiEt-ACR/GSOPT+PCM/gsopt_chx.out
+$QC/bin/qchem gsopt_chx.in /data/mewes1/CALC/tadf/ANDBA-DiEt-ACR/GSOPT+PCM/gsopt_chx.out
 fi
 
