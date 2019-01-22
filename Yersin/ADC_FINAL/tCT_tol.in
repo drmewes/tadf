@@ -1,0 +1,99 @@
+$rem
+threads        26 
+method sosadc(2)
+adc_c_t 1202
+basis  vdz
+aux_basis rimp2-VDZ
+mem_total     480000
+mem_static    2000
+ee_triplets   2
+adc_davidson_maxsubspace        24
+adc_davidson_maxiter            150
+adc_davidson_conv		4
+solvent_method    pcm
+n_frozen_core 	fc
+$end
+
+$solvent
+dielectric	2.38
+dielectric_infi	2.25
+$end
+
+$pcm
+vdwscale 1.3
+theory iefpcm
+$end
+
+$molecule
+read utctopt_tol.mol
+$end
+
+@@@
+
+$rem
+threads        26
+method sosadc(2)
+adc_c_t 1202
+basis  vdz 
+aux_basis rimp2-VDZ
+mem_total     480000
+mem_static    2000
+ee_triplets   1
+adc_davidson_maxsubspace        24  
+adc_davidson_maxiter            100
+adc_davidson_conv		6
+solvent_method    pcm
+n_frozen_core   fc
+$end
+
+$pcm
+theory iefpcm
+eqsolv  30
+eqstate 1
+vdwscale 1.3
+$end
+
+$solvent
+dielectric      2.38
+dielectric_infi 2.25
+$end
+
+$molecule
+read
+$end
+
+@@@
+
+$rem
+threads        26
+method sosadc(2)
+adc_c_t 1202
+basis vDZ*
+aux_basis riMP2-VDZ
+mem_total     480000
+mem_static    2000
+ee_triplets   2
+ee_singlets   2
+adc_davidson_maxsubspace        24 
+adc_davidson_maxiter            100
+solvent_method  pcm
+n_frozen_core   fc
+$end
+
+$pcm
+theory iefpcm
+eqsolv  1
+eqstate 1
+vdwscale 1.3
+$end
+
+$solvent
+dielectric      2.38
+dielectric_infi 2.25
+$end
+
+$molecule
+read
+$end
+
+

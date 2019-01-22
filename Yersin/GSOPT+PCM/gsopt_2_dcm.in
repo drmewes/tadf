@@ -1,0 +1,23 @@
+$rem
+threads 4
+jobtype	opt
+method PBEh-3c
+basis def2-mSVP
+mem_static	1024
+mem_total	4000
+sym_ignore	true
+scf_convergence	9
+solvent_method	pcm
+$end
+
+$molecule
+read gsopt_2.mol
+$end
+
+$solvent
+dielectric	8.93 
+$end
+
+$pcm
+theory iefpcm
+$end
