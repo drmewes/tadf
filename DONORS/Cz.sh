@@ -1,14 +1,14 @@
 #!/bin/bash
 
-#SBATCH --job-name=.data.mewes1.CALC.tadf.DONORS.Cz.in
-#SBATCH -t 0-12:00
+#SBATCH --job-name=dCALC.TADF.DONORS.Cz.in
+#SBATCH -t 3-0:00
 #SBATCH -n 8
 #SBATCH -N 1
 #SBATCH --mem-per-cpu=2G
 #SBATCH --mail-type=END
 #SBATCH --mail-type=FAIL
-#SBATCH -o /home/mewes1/err/qchem-%j
-#SBATCH --mail-user=stefaniemewes@janmewes.de
+#SBATCH -o /home/mewes/err/qchem-%j
+#SBATCH --mail-user=janmewes@janmewes.de
 #SBATCH -p short
 
 echo "This job was submitted from the computer:"
@@ -23,7 +23,7 @@ echo "The local scratch directory (located on the compute node) is:"
 echo "$SCRATCH"
 echo ""
 
-module unload *
+#module unload *
 module add q-chem/intel/QCHEM_5.1.0_Trunk
 #module load openmpi/intel/64/1.10.4-i8 
 #module load intel/compiler/64/16.0.3/2016.3.210 
@@ -38,15 +38,15 @@ export QCPLATFORM=LINUX_Ix86
 
 # Go into Scratch
 cd $SCRATCH
-cp /data/mewes1/CALC/tadf/DONORS/Cz.in /data/mewes1/CALC/tadf/DONORS/*.mol .
+cp /data/mewes/CALC/TADF/DONORS/Cz.in /data/mewes/CALC/TADF/DONORS/*.mol .
 
 # Backup old out file is existing 
-[ -e /data/mewes1/CALC/tadf/DONORS/Cz.out ] && cp /data/mewes1/CALC/tadf/DONORS/Cz.out /data/mewes1/CALC/tadf/DONORS/Cz.out_OLD
+[ -e /data/mewes/CALC/TADF/DONORS/Cz.out ] && cp /data/mewes/CALC/TADF/DONORS/Cz.out /data/mewes/CALC/TADF/DONORS/Cz.out_OLD
 
 # Execute the program
 if [ "" = "yes" ] ; then
-$QC/bin/qchem -save Cz.in /data/mewes1/CALC/tadf/DONORS/Cz.out Cz.out.plots
+$QC/bin/qchem -save Cz.in /data/mewes/CALC/TADF/DONORS/Cz.out Cz.out.plots
 else
-$QC/bin/qchem Cz.in /data/mewes1/CALC/tadf/DONORS/Cz.out
+$QC/bin/qchem Cz.in /data/mewes/CALC/TADF/DONORS/Cz.out
 fi
 

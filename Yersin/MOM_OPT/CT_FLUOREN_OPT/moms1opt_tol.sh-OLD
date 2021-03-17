@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=dCALC.TADF_OLD.Yersin.MOM_OPT.CT_FLUOREN_OPT.moms1opt_tol.in
+#SBATCH --job-name=dCALC.TADF.Yersin.MOM_OPT.CT_FLUOREN_OPT.moms1opt_tol.mol
 #SBATCH -t 3-0:00
 #SBATCH -n 8
 #SBATCH -N 1
@@ -38,15 +38,15 @@ export QCPLATFORM=LINUX_Ix86
 
 # Go into Scratch
 cd $SCRATCH
-cp /data/mewes/CALC/TADF_OLD/Yersin/MOM_OPT/CT_FLUOREN_OPT/moms1opt_tol.in /data/mewes/CALC/TADF_OLD/Yersin/MOM_OPT/CT_FLUOREN_OPT/*.mol .
+cp /data/mewes/CALC/TADF/Yersin/MOM_OPT/CT_FLUOREN_OPT/moms1opt_tol.mol /data/mewes/CALC/TADF/Yersin/MOM_OPT/CT_FLUOREN_OPT/*.mol .
 
 # Backup old out file is existing 
-[ -e /data/mewes/CALC/TADF_OLD/Yersin/MOM_OPT/CT_FLUOREN_OPT/moms1opt_tol.out ] && cp /data/mewes/CALC/TADF_OLD/Yersin/MOM_OPT/CT_FLUOREN_OPT/moms1opt_tol.out /data/mewes/CALC/TADF_OLD/Yersin/MOM_OPT/CT_FLUOREN_OPT/moms1opt_tol.out_OLD
+[ -e /data/mewes/CALC/TADF/Yersin/MOM_OPT/CT_FLUOREN_OPT/moms1opt_tol ] && cp /data/mewes/CALC/TADF/Yersin/MOM_OPT/CT_FLUOREN_OPT/moms1opt_tol /data/mewes/CALC/TADF/Yersin/MOM_OPT/CT_FLUOREN_OPT/moms1opt_tol_OLD
 
 # Execute the program
 if [ "" = "yes" ] ; then
-$QC/bin/qchem -save moms1opt_tol.in /data/mewes/CALC/TADF_OLD/Yersin/MOM_OPT/CT_FLUOREN_OPT/moms1opt_tol.out moms1opt_tol.out.plots
+$QC/bin/qchem -save moms1opt_tol.mol /data/mewes/CALC/TADF/Yersin/MOM_OPT/CT_FLUOREN_OPT/moms1opt_tol moms1opt_tol.plots
 else
-$QC/bin/qchem moms1opt_tol.in /data/mewes/CALC/TADF_OLD/Yersin/MOM_OPT/CT_FLUOREN_OPT/moms1opt_tol.out
+$QC/bin/qchem moms1opt_tol.mol /data/mewes/CALC/TADF/Yersin/MOM_OPT/CT_FLUOREN_OPT/moms1opt_tol
 fi
 
